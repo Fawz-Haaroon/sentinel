@@ -28,4 +28,4 @@
 >• Python uses indentation to indicate a block of code.\
 >• Python will give you an error if you skip the indentation.\
 >• You have to use the __same number of spaces__ in the same block of code,\
-   otherwise Python will give you an error.
+    otherwise Python will give you an error.
