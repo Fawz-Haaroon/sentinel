@@ -1,12 +1,11 @@
 # Python
 
 ### Line Structure in Python
-
 >口 Python code is divided into __logical lines__.
 
 >口 Every line is ended by a token called newline.(i.e) Python uses new lines to complete a command.\
   (as opposed to other programming languages which often use semicolons or parentheses).
-   
+
 >口 Python relies on indentation, using whitespace, to define scope (a block of code); such as the scope of 
    loops,functions and classes.\
    (unlike other programming languages that often use curly bracket for this purpose).
@@ -28,4 +27,10 @@
 >• Python uses indentation to indicate a block of code.\
 >• Python will give you an error if you skip the indentation.\
 >• You have to use the __same number of spaces__ in the same block of code,\
-    otherwise Python will give you an error.
+   otherwise Python will give you an error.
+
+### Keywords in Python
+>![keywords](image.png)
+
+### Data classes(types) in Python
+>
