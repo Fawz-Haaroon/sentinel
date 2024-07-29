@@ -30,7 +30,7 @@
    otherwise Python will give you an error.
 
 ### Keywords in Python
->![keywords](image.png)
+>![keywords](image1.png)
 
 ### Data classes(types) in Python
->
+>![datatypes](image2.png)
