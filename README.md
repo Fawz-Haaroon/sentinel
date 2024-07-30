@@ -30,18 +30,20 @@
    otherwise Python will give you an error.
 
 ## Keywords in Python
->![keywords](image1.png)
+><img src= "image1.png" width= 430px height=210px object-fit= cover>
 
 ## Data classes(types) in Python
->![datatypes](image2.png)
+><img src= "image2.png" width= 430px height=210px object-fit= cover>
 
 Variables can store data of different\
  types and different types can do different things
->![names](image3.png)
+><img src= "image3.png" width= 400px height=240px object-fit= cover>
 
 ## Getting the Datatype of an object
 
- You can get the datatype of any object by using the **type()** function
+ You can get the datatype of any object by using the **type()** function\
+ (ALL DATATYPES ARE ILLUSTRATED BELOW)
+ 
 
 >[!TIP]
 >x = str("Hello World")\
@@ -138,5 +140,5 @@ print(type(x))
 
 > [!IMPORTANT]
 >#### BASED ON FLOATS
->![](image.png)
+><img src= "image.png" width= 390px height=100px object-fit= cover>
 
