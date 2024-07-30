@@ -1,6 +1,6 @@
 # Python
 
-### Line Structure in Python
+## Line Structure in Python
 >口 Python code is divided into __logical lines__.
 
 >口 Every line is ended by a token called newline.(i.e) Python uses new lines to complete a command.\
@@ -21,7 +21,7 @@
 
     x = 1 ; y = 2
 
-### Python Indentation
+## Python Indentation
 
 >• __Indentation__ refers to the __spaces__ at the beginning of a code line.\
 >• Python uses indentation to indicate a block of code.\
@@ -29,8 +29,114 @@
 >• You have to use the __same number of spaces__ in the same block of code,\
    otherwise Python will give you an error.
 
-### Keywords in Python
+## Keywords in Python
 >![keywords](image1.png)
 
-### Data classes(types) in Python
+## Data classes(types) in Python
 >![datatypes](image2.png)
+
+Variables can store data of different\
+ types and different types can do different things
+>![names](image3.png)
+
+## Getting the Datatype of an object
+
+ You can get the datatype of any object by using the **type()** function
+
+>[!TIP]
+>x = str("Hello World")\
+print(type(x))
+>
+>#<class 'str'>
+
+>[!TIP]
+>x = int(20)\
+print(type(x))
+>
+>#<class 'int'>
+
+>[!TIP]
+>x = float(20.5)\
+print(type(x))
+>
+>#<class 'float'>
+
+>[!TIP]
+>x = complex(1j)\
+print(type(x))
+>
+>#<class 'complex'>
+
+>[!TIP]
+>x = list(["apple", "banana", "cherry"])\
+print(type(x))
+>
+>#<class 'list'>
+
+>[!TIP]
+>x = tuple(("apple", "banana", "cherry"))\
+print(type(x))
+>
+>#<class 'tuple'>
+
+>[!TIP]
+>x = range(6)\
+print(type(x))
+>
+>#<class 'range'>
+
+>[!TIP]
+>x = {"name" : "John", "age" : 36}  **(OR)**\
+x = dict(name="John", age=36)\
+print(type(x))
+>
+>#<class 'dict'>
+
+>[!TIP]
+>x = set({"apple", "banana", "cherry"})\
+print(type(x))
+>
+>#<class 'set'>
+
+>[!TIP]
+>x = frozenset({"apple", "banana", "cherry"})\
+print(type(x))
+>
+>#<class 'frozenset'>
+
+>[!TIP]
+>x = bool(5)\ **(OR)**\
+x = True\
+print(type(x))
+>
+>#<class 'bool'>
+
+>[!TIP]
+>x = b"Hello"  **(OR)**\
+x = bytes(5)\
+print(type(x))
+>
+>#<class 'bytes'>
+
+>[!TIP]
+>x = bytearray(5)\
+print(type(x))
+>
+>#<class 'bytearray'>
+
+>[!TIP]
+>x = memoryview(bytes(5))\
+print(type(x))
+>
+>#<class 'memoryview'>
+
+>[!TIP]
+>x = None\
+print(type(x))
+>
+>#<class 'NoneType'>
+
+> [!IMPORTANT]
+>#### BASED ON FLOATS
+>![](image.png)
+
