@@ -143,4 +143,16 @@ print(type(x))
 ><img src= "image.png" width= 390px height=100px >
 
 > [!IMPORTANT]
-> 
+>#### FEW ESCAPE SEQUESCES 
+> | sequence | use |
+> | --- | --- |
+> | \n | used for newline |
+> | \a | used for alert sound |
+> | \b | for backspace character |
+> | \f | for form feed |
+> | \r | for carriage return |
+> | \t | tab space horizontal |
+> | \v | tab space vertical |
+> | \ooo | character of octal value oo |
+> | \xHH | character of Hexa decimal value HH |
+
