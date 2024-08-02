@@ -143,4 +143,8 @@ print(type(x))
 ><img src= "image.png" width= 390px height=100px >
 
 > [!IMPORTANT]
+<<<<<<< HEAD
 > 
+=======
+> 
+>>>>>>> aad908e36bfdc61b572d4af96209f79bdad033f0
