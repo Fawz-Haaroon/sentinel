@@ -1,6 +1,6 @@
 # Python
 
-## Line Structure in Python
+# Line Structure in Python
 >口 Python code is divided into __logical lines__.
 
 >口 Every line is ended by a token called newline.(i.e) Python uses new lines to complete a command.\
@@ -29,10 +29,10 @@
 >• You have to use the __same number of spaces__ in the same block of code,\
    otherwise Python will give you an error.
 
-## Keywords in Python
+# Keywords in Python
 ><img src= "image1.png" width= 430px height=210px >
 
-## Data classes(types) in Python
+# Data classes(types) in Python
 ><img src= "image2.png" width= 430px height=210px >
 
 Variables can store data of different\
@@ -139,11 +139,11 @@ print(type(x))
 >## #<class 'NoneType'>
 
 > [!IMPORTANT]
->#### BASED ON FLOATS
+>### BASED ON FLOATS
 ><img src= "image.png" width= 390px height=100px >
 
 > [!IMPORTANT]
->#### FEW ESCAPE SEQUESCES 
+>### FEW ESCAPE SEQUESCES 
 > | sequence | use |
 > | --- | --- |
 > | \n | used for newline |
@@ -156,3 +156,38 @@ print(type(x))
 > | \ooo | character of octal value oo |
 > | \xHH | character of Hexa decimal value HH |
 
+# PYTHON OPERATORS
+>## ● Arithmetic Operators
+> Arithmetic operators are used with numerioc values to perform common mathematical operations\
+> | Operation | Operator Symbol | Description |
+> | --- | --- | --- |
+> | Addition | + | to add |
+> | Subtraction | - | to subtract |
+> | Multiplication | * | to multiply |
+> | Division | / | to divide |
+> | Modulus | % | Reminder |
+> | Floor Division | // | Quotient |
+> | Exponent | ** | Raise to a Power |
+>## ● **Assignment Operators**
+> Assignment operators are used to assign values to variables\
+> | Operation | Operator Symbol | Description
+> | --- | --- | --- |
+> | Assig | = | to assign a value |
+> | add and assign | += | to add and assign |
+> | subt and assign | -= | to subtract and assign |
+> | multiply and assign | *= | to multiply and assign |
+> | Modulus and assign | %= |  |
+> | Exponent and assign | **= |  |
+> | Floor and assign | //= |  | 
+>## ● **Comparison Operators**
+> Comparison operators used to compare 2 different values\
+><img src="" width="" height="">
+>## ● **Logical Operators**
+> Logical operators are used to combine conditional statements\
+><img src="" width="" height="">
+>## ● **Membership Operators**
+> Comparison\
+><img src="" width="" height="">
+>## ● **Bitwise Operators**
+> Comparison\
+><img src="" width="" height="">
