@@ -197,7 +197,7 @@ print(type(x))
  | Either condition | or | to check if any of the given expressions are true, then it returns result as TRUE. if all the expressions are false, then returns result as FALSE |
  | Both condition | and | to check if every expression given is true ,then it returns result as TRUE. even if any 1 of the expression is false, it returns result as FALSE |
 >[!NOTE]
-<img src="image4.png">
+><img src="image4.png">
 ## ● **Identity Operators**
  Logical operators are used to compare the objects, not if they are equal, but if they are actually the same object.
 ## ● **Membership Operators**
