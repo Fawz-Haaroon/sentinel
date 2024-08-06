@@ -174,11 +174,18 @@ print(type(x))
  | --- | --- | --- |
  | Assig | = | to assign a value |
  | add and assign | += | to add and assign |
- | subt and assign | -= | to subtract and assign |
+ | subtr and assign | -= | to subtract and assign |
  | multiply and assign | *= | to multiply and assign |
+ | divide and assign | /= | to divide and assign |
  | Modulus and assign | %= |  |
  | Exponent and assign | **= |  |
  | Floor and assign | //= |  | 
+ | Divide (floor) and assign |  //= |  |
+ | Bitwise AND and assign | &= |  |
+ | Bitwise OR and assign | \|= |  |
+ | Bitwise XOR and assign | ^= |  |
+ | Bitwise right-shift and assign | >>= |  |
+ | Bitwise left-shift and assign | <<= |  |
 ## ● **Comparison Operators**
  Comparison operators used to compare 2 different values
  | Operation | Operator Symbol |
