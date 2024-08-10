@@ -211,3 +211,7 @@ print(type(x))
  Membership operators are used to test if a sequenceis present in an object.
 ## ● **Bitwise Operators**
  Bitwise operators are used to compare (binary) numbers.
+
+| x | x | x |
+ | --- | --- | --- |
+ |  |  |  |
