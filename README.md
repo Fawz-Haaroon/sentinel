@@ -212,13 +212,9 @@ print(type(x))
 ## ● **Bitwise Operators**
  Bitwise operators are used to compare (binary) numbers.
 
-| x | x | x |
- | --- | --- | --- |
- |  |  |  |
-| x | x | x |
- | --- | --- | --- |
- |  |  |  |
 
 | x | x | x |
  | --- | --- | --- |
  |  |  |  |
+
+Simple random sampling with or without replacement is way easier when learnt
