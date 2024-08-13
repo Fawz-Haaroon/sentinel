@@ -58,16 +58,11 @@ Python is mouse
 Python is mouse
 '''
 
-# 10 lines of ython code to your rescue
+# Strings in python
 
-import turtle
-t = turtle.Turtle()
-turtle.bgcolor("black")
-t.speed(0)
-colors = ["red", "yellow", "blue", "green", "purple", "orange"]
-for i in range(1000):
-    t.pencolor(colors[i % 6])
-    t.forward(i * 1)
-    t.right(90)
-turtle.done()
+name = 'Arifureta'
+print(name[0])
+
+
+
  

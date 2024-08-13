@@ -142,19 +142,19 @@ print(type(x))
 >### BASED ON FLOATS
 ><img src= "image.png" width= 390px height=100px >
 
- [!IMPORTANT]
-### FEW ESCAPE SEQUESCES 
- | sequence | use |
- | --- | --- |
- | \n | used for newline |
- | \a | used for alert sound |
- | \b | for backspace character |
- | \f | for form feed |
- | \r | for carriage return |
- | \t | tab space horizontal |
- | \v | tab space vertical |
- | \ooo | character of octal value oo |
- | \xHH | character of Hexa decimal value HH |
+> [!IMPORTANT]
+>### FEW ESCAPE SEQUESCES 
+> | sequence | use |
+>| --- | --- |
+>| \n | used for newline |
+>| \a | used for alert sound |
+>| \b | for backspace character |
+>| \f | for form feed |
+>| \r | for carriage return |
+>| \t | tab space horizontal |
+>| \v | tab space vertical |
+>| \ooo | character of octal value oo |
+>| \xHH | character of Hexa decimal value HH |
 
 # PYTHON OPERATORS
 ## ● Arithmetic Operators
@@ -177,15 +177,14 @@ print(type(x))
  | subtr and assign | -= | to subtract and assign |
  | multiply and assign | *= | to multiply and assign |
  | divide and assign | /= | to divide and assign |
- | Modulus and assign | %= |  |
- | Exponent and assign | **= |  |
- | Floor and assign | //= |  | 
- | Divide (floor) and assign |  //= |  |
- | Bitwise AND and assign | &= |  |
- | Bitwise OR and assign | \|= |  |
- | Bitwise XOR and assign | ^= |  |
- | Bitwise right-shift and assign | >>= |  |
- | Bitwise left-shift and assign | <<= |  |
+ | Modulus and assign | %= | to find moduluds and assign |
+ | Exponent and assign | **= | to find exponentiation and assign |
+ | Floor and assign | //= | floor division and assign | 
+ | Bitwise AND and assign | &= | find bitwise AND and assign |
+ | Bitwise OR and assign | \|= | find bitwise OR and assign |
+ | Bitwise XOR and assign | ^= | find bitwise XOR and assign |
+ | Bitwise right-shift and assign | >>= | find bitwise RIGHSHIFT and assign |
+ | Bitwise left-shift and assign | <<= | find bitwise LEFTSHIFT and assign |
 ## ● **Comparison Operators**
  Comparison operators used to compare 2 different values
  | Operation | Operator Symbol |
