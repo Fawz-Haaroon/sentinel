@@ -62,6 +62,72 @@ Python is mouse
 
 name = 'Arifureta'
 print(name[0])
+#output
+'A'
+
+#STRINGS- Accessing substring of a string (slicing)
+name = 'Haaroon'
+print(name[0:7])
+print(name[0:])
+print(name[:7])
+print(name[:])
+print(name[-7:])
+#output
+'''
+Haaroon
+Haaroon
+Haaroon
+Haaroon
+Haaroon
+'''
+
+#STRING-OPERATORS:- Concatenate Operator
+a = 'aaaa'
+b = 'bbbb'
+c = 'cccc'
+z = a + b + c 
+print(z)
+#output
+'''
+aaaabbbbcccc
+'''
+
+#STRING-OPERATORS:- Repitition Operator
+x = 'Fawz'
+print(x * 3)
+print(x * 0)
+print(x * -2)
+#output
+'''
+FawzFawzFawz
+
+
+'''
+
+#STRING-OPERATORS:- Comparison Operator
+'''
+Comparisons are case sensitive, each character has an ASCII value  while using these operators, only the ASCII values are compared
+ASCII value of A=65, B=66, C=67 ......
+ASCII value of a=97, b=98, c=99 ......
+so A < a
+1] == 
+2] != 
+3] <
+4] <=
+5] >
+6] >=
+'''
+
+#STRING-OPERATORS:- Membership Operator
+'''
+1] in 
+>>> 'jas' in 'jaspreet'
+True
+2] not in
+>>> 'p' not in 'jaspreet'
+True
+'''
+
 
 
 
