@@ -319,4 +319,513 @@ ONLY CHECKS FOR TRAILING CHARACTERS AND DOESNT AFFECT LEADING ONES
 '''
 
 
+# split() method
+'''
+used to split string into a list (from left to right)
+
+>>> SYNTAX
+str.split(separator,maxsplit)
+
+separator - represents the character where split should occur
+maxsplit - represents the no. of splits. for 'n' splits we get 'n+1' items
+(split() starts reading and separating the string from the left)
+'''
+print("Hello!$I$am$Jaspreet".split('$',maxsplit=2))
+# output
+['Hello','I','am$Jaspreet']
+
+
+# rsplit() method
+'''
+used to split string into a list (from right to left)
+
+>>> SYNTAX
+str.rsplit(separator,maxsplit)
+
+(split() starts reading and separating the string from right)
+'''
+print("Hello!$I$am$Jaspreet".rsplit('$',maxsplit=2))
+# output
+['Hello!$I','am','Jaspreet']
  
+
+
+# join() method
+'''
+Used to JOIN the ELEMENTS of an 
+ITERABLE (list, dictionary, tuple, set,string,)
+
+>>>SYNTAX
+separator.join(iterable)
+'''
+
+li = ['H','E','L','L','O']
+print(''.join(li)) 
+'''
+       here '' is the separator, nothing, not even white space, and
+       list li is used since its an iterable, and hence can be joined
+'''
+#OUTPUT
+'''HELLO'''
+
+d = {'name': 'ADAM' , 'country': 'US'}
+print(' and '.join(d)) 
+'''
+       here ' and ' is the separator and dictionary d is used since its an iterable, and hence can be joined
+'''
+#Output
+''''
+name and country
+'''
+
+
+# replace() method
+'''
+used to replace a specific string with another string.
+
+>>>SYNTAX
+str.replace(oldString, newString, count)
+'''
+s = 'I LOVE TO EAT MANGO and MANGO and MANGO'
+print(s.replace('MANGO','APPLE'))
+print(s.replace(' ','_',4))
+#Output
+'''
+I LOVE TO EAT APPLE and APPLE and APPLE
+I_LOVE_TO_EAT_MANGO and MANGO and MANGO
+'''
+
+
+
+# upper() method
+'''
+used to convert all letters of the string to UPPERCASE
+
+>>>SYNTAX
+string.upper()
+'''
+
+# lower() method
+'''
+used to convert all letters of the string to LOWERCASE
+
+>>>SYNTAX
+string.lower()
+'''
+
+# capitalize() method
+'''
+returns a string where the first character of the first word is UPPERCASE, and rest remaind the same
+
+>>>SYNTAX
+string.lower()
+'''
+
+# isupper() method
+'''
+returns 'True' if ALL characters are uppercase, otherwise returns 'False'. so result is boolean value.
+
+>>>SYNTAX
+string.isupper()
+'''
+
+# islower() method
+'''
+returns 'True' if ALL characters are lowercase, otherwise returns 'False'. so result is boolean value.
+
+>>>SYNTAX
+string.islower()
+'''
+
+
+# isalpha() method
+'''
+returns 'True' if ALL characters(it checks even for white spaces) are ALPHABETS (a-z or A-Z)
+
+>>>SYNTAX
+string.isalpha()
+'''
+print("hello2".isalpha())
+print("Hello I am Fawz".isalpha())
+print("hshejgrhjsbhjs".isalpha())
+#Output
+'''
+False
+False
+True
+'''
+
+# isnumeric() method
+'''
+returns 'True' if ALL characters(it checks even for white spaces or symbols like +,.,-, etc) are NUMBERS
+
+>>>SYNTAX
+string.isnumeric()
+'''
+print("3453453".isnumeric())
+print("3453.4434".isnumeric())
+print("2/4".isnumeric())
+#Output
+'''
+True
+False
+False
+'''
+
+# isalnum() method
+'''
+returns 'True' if all characters are alphanumeric (a-z , A-Z, 0-9)
+and no other characters
+'''
+print("353hjb".isalnum())
+print(" my age is 9".isalnum())
+#Output
+'''
+True
+False
+'''
+
+
+# count() method
+'''
+returns the No. of occurences of a substring
+if substring NOT FOUND, returns 0
+
+>>>SYNTAX
+string.count(substring, start index, end index)
+so searches from start index till end index, the no. of occurences
+'''
+print("i love fruits, Fruits are healthy".count('fruits'))
+print("i love fruits, Fruits are healthy".count('fruits', 3, 13))
+#Output
+1
+1
+
+# find() method
+'''
+returns the INDEX of the FIRST occurence of the substring
+if substring NOT FOUND, returns -1
+
+>>>SYNTAX
+string.find(substring, start index, end index)
+'''
+print("Python is a beautiful language".find('b'))
+print("Python is a beautiful language".find('b', 1, 5))
+#Output
+'''
+12
+-1
+'''
+
+# rfind() method
+'''
+returns the INDEX of the LAST occurence of the substring
+if substring NOT FOUND, returns -1
+
+>>>SYNTAX
+string.rfind(substring, start index, end index)
+'''
+print("Python is a beautiful language".rfind('e'))
+print("Python is a beautiful language".rfind('e', 1, 5))
+#Output
+'''
+29
+-1
+'''
+
+
+# index() method
+'''
+returns the INDEX of the FIRST occurence of the substring
+if substring is NOT FOUND , it raises an EXCEPTION(valueError)
+
+>>>SYNTAX
+string.index(substring, start index, end index)
+'''
+print("Python is a beautiful language".index('e'))
+print("Python is a beautiful language".index('e',1,5))
+#Output
+'''
+13
+ValueError: substring not found
+'''
+
+# rindex() method
+'''
+returns the INDEX of the LAST occurence of the substring
+if substring is NOT FOUND , it raises an EXCEPTION(valueError)
+
+>>>SYNTAX
+string.rindex(substring, start index, end index)
+'''
+print("Python is a beautiful language".rindex('e'))
+print("Python is a beautiful language".rindex('e',1,5))
+#Output
+'''
+29
+ValueError: substring not found
+'''
+
+
+# IMPLICIT TYPE CONVERSION
+'''
+Ability of Python to convert an OBJECT from ONE Dat type to another without any intervention from the programmer
+
+RULE OF CONVERSION : 
+             LOWER Datatype is converted to the HIGHER Data type
+The type of resultant depends upon the OPERATOR and 
+VALUE WITH HIGHER DATA TYPE
+'''
+
+print(5 + 10.98)
+# Output 
+'''
+15.98
+'''
+'''
+integer value 5 is converted to float while giving result in order to be added with a float datatype(higher datatype)
+'''
+print(10/2)
+# Output 
+'''
+2.00
+'''
+'''
+division by its very nature always results in a floating type value
+'''
+
+
+# EXPLICIT TYPE CONVERSION
+'''
+refers to the conversion of OBJECT of ONE TYPE to ANOTHER TYPE
+via Programmer's intervention
+'''
+
+# converting to int(value, base)
+x = '110'
+x = int(x,2)   
+''' base 2 means, python treats it as binary balue and not decimal'''
+print(type(x))
+print(x + 1)
+
+# output
+'''
+<class 'int'>
+7
+'''
+
+
+
+# converting to float(value)
+x = 78
+x = float(x)
+print(x)
+#output
+'''78.0'''
+y = '78.54654580'
+y = float(y)
+print(y)
+#outpyt
+'''78.5465458'''
+
+# converting to str(value)
+a = 198
+a = str(a)
+print(type(a))
+#output
+'''<class 'str'>'''
+
+
+
+
+# LISTS (single and multi dimentional)
+
+li = [ 1,2,3,4]
+print(li[3])
+#Output
+'''
+4
+'''
+Li = [[1,2,3], 'srdrf' ,[4,3,5,5,4,3]]
+print(Li[2][3])
+print(Li[1][3])
+#Output
+'''
+5
+r
+'''
+
+## Adding elements to a list
+
+# append() method
+'''
+used to add items at the END of the list
+'''
+list = ['c', 'cpp', 'java']
+list.append('python')
+list.append('java')
+list.append('javascript')
+list.append(['html','css'])
+print(list)
+#output
+'''
+['c', 'cpp', 'java', 'python', 'java', 'javascript', ['html', 'css']]
+'''
+
+# insert() method
+'''
+used to add an item at specific position
+SYNTAX:-  list.insert(position,value)
+'''
+List = ['html','css','javascript']
+List.insert(1,'python')
+print(List)
+#Output
+'''
+['html', 'python', 'css', 'javascript']
+'''
+
+# extend() method
+list1 = ['C', 'php', 'java', 'python']
+list2 = ['html','css','javascript']
+list1.extend(list2)
+print(list1)
+print(list2)
+#Output
+'''
+['C', 'php', 'java', 'python', 'html', 'css', 'javascript']
+['html', 'css', 'javascript']
+'''
+
+
+
+# input a list using loop
+n = int(input('Enter the no. of items: '))
+items = []
+for i in range(n):
+    x = int(input())
+    items.append(x)
+print(items)
+# Output
+'''
+Enter the no. of items: 4
+4
+67
+75
+8
+[4, 67, 75, 8]
+'''
+
+# creating a list using split() method
+numbers = input('enter the numbers: ').split()
+print(numbers)
+#output (notics the output is recieved as string)
+'''
+enter the numbers: 43 34 33
+['43', '34', '33']
+
+'''
+
+
+
+# Accepting a list using both
+# split() and for loop
+
+
+n = int(input('Enter the no. of items: '))
+numbers = input('enter your ' + str(n) + ' numbers :' ).split()
+
+print(numbers)
+
+for i in range(0, n):
+    numbers[i] = int(numbers[i])
+    print(numbers)
+    
+print(numbers)
+# Output
+'''
+Enter the no. of items: 4
+enter your 4 numbers :33 99 77 66
+['33', '99', '77', '66']
+[33, '99', '77', '66']
+[33, 99, '77', '66']
+[33, 99, 77, '66']
+[33, 99, 77, 66]
+[33, 99, 77, 66]
+
+'''
+
+
+# changing or altering MULTIPLE ITEMS of a list
+list = [ 34,345,'josh','java',455,'llm']
+list[2:4] = ['review','python', 4543]
+print(list)
+#output
+'''
+[34, 345, 'review', 'python', 4543, 455, 'llm']
+'''
+
+
+# inserting NEW item in a list
+'''
+>>>SYNTAX:-  list.insert(index,item)
+'''
+list = ['java','python',45,54,'C']
+list.insert(2,'mike')
+print(list)
+#output
+'''
+list = ['java','python','mike',45,54,'C']
+'''
+
+
+# removing item from list
+
+# using remove() method -- (pass the string)
+list = ['mike', 'java', 'kjhg']
+list.remove('java')
+print(list)
+#output
+'''
+['mike', 'kjhg']
+'''
+
+# using pop() method --- (pass the index) list.pop(index) also returns the deleted item 
+list = ['mike', 'java', 'snake']
+print(list.pop(1))
+print(list)
+'''
+IF NO INDEX IS SPECIFIED IN li.pop(index) INDEX , THEN THE LAST ITEM IS REMOVED
+'''
+#output
+'''
+java
+['mike', 'snake']
+'''
+
+# using del keyword
+li = ['mike', 'snake', 433, 543]
+del li[1]
+print(li)
+#output
+'''
+['mike', 433, 543]
+'''
+# we can also delete ENTIRE list usinf del keyword
+del li
+print(li)
+#output
+'''
+NameError: name 'li' is not defined
+'''
+
+# using clear method --- used to remove items of the list, and make an empty list
+list = ['mike', 'java', 'kjhg']
+list.clear()
+print(list)
+#output
+'''
+[]
+'''
+
+
