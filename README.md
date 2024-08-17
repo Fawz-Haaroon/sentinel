@@ -173,18 +173,18 @@ print(type(x))
  | Operation | Operator Symbol | Description
  | --- | --- | --- |
  | Assig | = | to assign a value |
- | add and assign | += | to add and assign |
- | subtr and assign | -= | to subtract and assign |
- | multiply and assign | *= | to multiply and assign |
- | divide and assign | /= | to divide and assign |
- | Modulus and assign | %= | to find moduluds and assign |
- | Exponent and assign | **= | to find exponentiation and assign |
- | Floor and assign | //= | floor division and assign | 
- | Bitwise AND and assign | &= | find bitwise AND and assign |
- | Bitwise OR and assign | \|= | find bitwise OR and assign |
- | Bitwise XOR and assign | ^= | find bitwise XOR and assign |
- | Bitwise right-shift and assign | >>= | find bitwise RIGHSHIFT and assign |
- | Bitwise left-shift and assign | <<= | find bitwise LEFTSHIFT and assign |
+ | add and assign | += | to add both operands and assign the result to left operand|
+ | subtr and assign | -= | to subtract both operands and assign the result to left operand |
+ | multiply and assign | *= | to multiply both operands and assign the result to left operand |
+ | divide and assign | /= | to divide both operands and assign the result to left operand |
+ | Modulus and assign | %= | to perform modulus both operands and assign the result to left operand |
+ | Exponent and assign | **= | to exponentiate the left operant by right operand and assign the result to left operant |
+ | Floor and assign | //= | perfom floor division and assign the value to the left operand| 
+ | Bitwise AND and assign | &= | find bitwise AND and assign value to left operant|
+ | Bitwise OR and assign | \|= | find bitwise OR and assign value to left operand|
+ | Bitwise XOR and assign | ^= | find bitwise XOR and assign value to left operand|
+ | Bitwise right-shift and assign | >>= | find bitwise RIGHSHIFT and assign value to left operand |
+ | Bitwise left-shift and assign | <<= | find bitwise LEFTSHIFT and assign value to left operand|
 ## ● **Comparison Operators**
  Comparison operators used to compare 2 different values
  | Operation | Operator Symbol |
@@ -206,14 +206,41 @@ print(type(x))
 ><img src="image4.png">
 ## ● **Identity Operators**
  Logical operators are used to compare the objects, not if they are equal, but if they are actually the same object.
+ >SYNTAX :-    
+ > id(object)
 ## ● **Membership Operators**
- Membership operators are used to test if a sequenceis present in an object.
+ Membership operators are used to test if a sequenceis present in an object.\
+There are 2 membership operators
+
+> in
+
+> not in
 ## ● **Bitwise Operators**
- Bitwise operators are used to compare (binary) numbers.
+ Bitwise operators are used to compare (binary) numbers.\
+ ### Types
+ >  BITWISE AND (&)\
+ >  BITWISE OR (|)\
+ >  BITWISE NOT (~)\
+ >  BITWISE XOR (^)\
+ >  BITWISE RIGHT-SHIFT\
+ >  BITWISE LEFT-SHIFT\
+>(all theoritical knowledge of performing these operations are written in notes pen-paper for my understanding)
+ 
 
 
-| x | x | x |
- | --- | --- | --- |
- |  |  |  |
+> [!IMPORTANT]
+>## Precedence and Associativity
+>### **PRECEDENCE**
+> tell the order in which operations should be performed
+on operands in an expression
+><img src="image5.png" width="400px">
+>### **ASSOCIATIVITY**
+>tells the order of evaluation of the operators with same precedence in an expression
+ >| Oprators | Associativity |
+ >| --- | --- |
+ >| () | Left to Right |
+ >| ** | Right to Left |
+ >| +x and -x | Left to Right |
+ >| *, /, //, %  | Left to Right |
+ >| + and - | Left to Right |
 
-Simple random sampling with or without replacement is way easier when learnt
