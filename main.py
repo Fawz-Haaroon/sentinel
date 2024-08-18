@@ -828,4 +828,56 @@ print(list)
 []
 '''
 
+# Using LIST COMPREHENSION to shorten a for loop
+
+  # (eg1) using a usual for loop
+names = ['James', 'Joseph', 'Samuel', 'Jaguar', 'Ryan']
+J_names = []
+for name in names:
+   if 'J' in name:
+      J_names.append(name)
+      print(J_names)
+print(J_names)
+#OUTPUT
+'''
+['James']
+['James', 'Joseph']
+['James', 'Joseph', 'Jaguar']
+['James', 'Joseph', 'Jaguar']
+'''
+  # using LIST COMPREHESION
+names = ['James', 'Joseph', 'Samuel', 'Jaguar', 'Ryan']
+J_names = [name for name in names if 'J' in name]
+print(J_names)
+#OUTPUT
+'''
+['James', 'Joseph', 'Jaguar']
+'''
+
+
+  # (eg1) using a usual for loop 
+animals = ['lion', 'tiger', 'whale', 'elephant', 'frog']
+new_animals = []
+for animal in animals:
+   new_animals.append(animal.title())
+   print(new_animals)
+print(new_animals)
+#OUTPUT
+'''
+['Lion']
+['Lion', 'Tiger']
+['Lion', 'Tiger', 'Whale']
+['Lion', 'Tiger', 'Whale', 'Elephant']
+['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+'''
+  # using LIST COMPREHENSION
+animals = ['lion', 'tiger', 'whale', 'elephant', 'frog']
+new_animals = [animal.title() for animal in animals ]
+print(new_animals)
+#OUTPUT
+'''
+['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+'''
+
 
