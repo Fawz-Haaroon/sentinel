@@ -637,7 +637,7 @@ print(type(a))
 
 
 
-
+# LISTS LISTS LISTS
 # LISTS (single and multi dimentional)
 
 li = [ 1,2,3,4]
@@ -880,4 +880,61 @@ print(new_animals)
 ['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
 '''
 
+
+
+# DICTIONARIES DICTIONARIES DICTIONARIES
+# DICTIONARIES IN PYTHON
+
+
+# MUTATION (changing values) in dictionary
+
+dictionary = {'car': 'Audi', 'model': 'V7'}
+dictionary['model'] = 'V8'
+print(dict)
+# output
+'''
+{'car': 'Audi', 'model': 'V8'}
+'''
+
+'''
+SAME KEY SHOULD NOT BE USED, IF USED THEN THE VALUE OF THE LATTER'S VALUE WILL BE UPDATED TO THE KEY
+'''
+
+
+# LENGTH of dictionary
+dictionary = {'brand':'Audi' , 'model': 'V7'}
+print(len(dictionary))
+#output
+'''
+2
+'''
+
+# ALTERNATIVE WAY to construct dictionary using  dict() CONSTRUCTOR
+car = dict(brand = 'Audi', model = 'V8')
+print(car)
+#output
+'''
+{'brand': 'Audi', 'model': 'V8'}
+'''
+
+
+## ACCESSING DICTIONARY ITEMS
+
+# accessing values using KEY NAMES
+cars = {'brand':'Audi' , 'model': 'V7'}
+print(car['brand'])
+#output
+'''
+Audi
+'''
+
+# accessing values using get() method
+cars = {'brand':'Audi' , 'model': 'V7'}
+print(cars.get('brand'))
+#output
+'''
+Audi
+'''
+
+# accessing KEYS using key() METHOD
 
