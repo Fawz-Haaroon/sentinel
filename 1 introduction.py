@@ -326,14 +326,15 @@ used to split string into a list (from left to right)
 >>> SYNTAX
 str.split(separator,maxsplit)
 
-separator - represents the character where split should occur
-maxsplit - represents the no. of splits. for 'n' splits we get 'n+1' items
-(split() starts reading and separating the string from the left)
+>>> separator - represents the character where split should occur
+>>> maxsplit - represents the no. of splits. for 'n' splits we get 'n+1' items
+>>> (split() starts reading and separating the string from the left)
 '''
 print("Hello!$I$am$Jaspreet".split('$',maxsplit=2))
 # output
+'''
 ['Hello','I','am$Jaspreet']
-
+'''
 
 # rsplit() method
 '''
@@ -346,8 +347,9 @@ str.rsplit(separator,maxsplit)
 '''
 print("Hello!$I$am$Jaspreet".rsplit('$',maxsplit=2))
 # output
+'''
 ['Hello!$I','am','Jaspreet']
- 
+'''
 
 
 # join() method
@@ -959,6 +961,7 @@ print(cars.values())
 # view-object also REFLECTS ANY CHANGES done to the dictionary
 '''
 dict_values(['Audi', 'V7'])
+dict_items([('brand', 'Audi'), ('model', 'V7'), ('fuel', 'petrol')])
 '''
 
 # accessing values using items() method
@@ -976,7 +979,7 @@ dict_items([('brand', 'Audi'), ('model', 'V7'), ('fuel', 'petrol')])
 
 
 
-## CHANGING and ADDIMG dictionary items
+## CHANGING and ADDING dictionary items
 
 # Changing VALUES usimg KEYNAMES
 car = {'brand':'audi', 'model':'q7'}
