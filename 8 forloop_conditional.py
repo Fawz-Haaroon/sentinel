@@ -278,4 +278,80 @@ Enter the number(q for quit): q
 '''
 > used to skip the current iteration of the loop
 '''
+for i in range(5):
+      if i == 2 or i == 4:
+            continue
+      print(i)
+#output
+'''
+0
+1
+3
+'''
+
+n = 0
+while n <= 10:
+      n += 1
+      if n % 2 != 0:
+            continue
+      print(n, end=' ')
+#output
+'''
+2 4 6 8 10 
+'''
+
+
+# NESTED FOR LOOP
+list1 = [1,2,3]
+list2 = [4,5,6]
+for i in list1:
+    for j in list2:
+          print(i,j)
+    print( )
+#output
+'''
+1 4
+1 5
+1 6
+
+2 4
+2 5
+2 6
+
+3 4
+3 5
+3 6
+
+'''
+
+
+# NESTED WHILE LOOP
+list1 = [1,2,3]
+list2 = [4,5,6]
+i = 0 
+while i < len(list1):
+    j = 0                   # written inside while, so as to reinitialize j to 0 
+    while j < len(list2):
+        print(list1[i], list2[j])
+        j += 1
+    print( ) 
+    i += 1
+#output
+'''
+1 4
+1 5
+1 6
+
+2 4
+2 5
+2 6
+
+3 4
+3 5
+3 6
+
+'''
+
+
+
 

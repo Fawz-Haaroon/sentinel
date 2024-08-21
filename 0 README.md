@@ -244,3 +244,84 @@ on operands in an expression
  >| *, /, //, %  | Left to Right |
  >| + and - | Left to Right |
 
+
+## Difference between **for loop** and **while loop**
+ | **for loop** | **while loop** |
+ | --- | --- |
+ | for loop needs an **iterable object** to iterate | while loop executes based on some conditions |
+    for var in iterable:
+         # do something 
+
+    while condtion:
+         # do something
+ | **for loop** | **while loop** |
+ | --- | --- |
+ | for loop is known when no. of interations is known in advance | while loop is i used when no. of iterations is not known in advanced |
+    for i in range(1, 6):
+            print(i)
+    
+    # OUTPUT
+    0
+    1
+    2
+    3
+    4
+    5
+
+
+
+    while True:
+        n = input('Enter the number: ')
+        if n == 'q':
+             break
+        print(n)
+    
+    # OUTPUT
+    Enter the number: 5
+    5
+    Enter the number: q
+
+
+ | **for loop** | **while loop** |
+ | --- | --- |
+ | Both for loop and while loop can run infinite times | Both for loop and while loop can run infinite times |
+
+    items = [0]
+    for item in items:
+    print(item)
+    items.append(item)
+
+    #OUTPUT
+    0
+    2
+    3
+    4
+    5
+    0
+    2
+    3
+    4
+    5
+    .
+    .
+    .
+    .(REPEATED)
+
+    item = 0
+    while True:
+        print(item)
+    
+    #OUTPUT
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    (0, 1, 2, 3, 4, 5)
+    .
+    .
+    .
+    .(REPEATED)
