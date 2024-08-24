@@ -255,7 +255,7 @@ print(multiply_by_2(33))
 
 
 
-# Assigning FUNCTIONS to VARIABLES   ( since everything in python is considered an OBJECT, even function can be assigned to a variable)
+## Assigning FUNCTIONS to VARIABLES   ( since everything in python is considered an OBJECT, even function can be assigned to a variable)
 
 # function definition
 def greet(name):
@@ -274,5 +274,100 @@ Hello, Jaspreet!
 
 # Advantages of assigning functions to variables
 '''
+- allows creating shorter or more descriptive names for functions
+- enables function SELECTION based on CONDITION or PREFERENCES
+'''
+def add(x, y):
+    return x+y
+def multiply(x, y):
+    return x*y
+choice = input('State Your operation, add or multiply ? ')
+if choice == 'add':
+    selected_function = add
+elif choice == 'multiply':
+    selected_function = multiply
 
+result = selected_function(3, 5)
+print(result)
+#OUTPUT
+'''
+State Your operation, add or multiply ? add
+8
+'''
+
+
+
+## Passing functions as ARGUMENTS 
+def add(x, y):
+    return x + y
+def fun1(fun2, a, b):     # fun2 will recieve the reference to some function (whatever we assign) when we call the main function
+    return fun2(a, b)
+result = fun1(add, 3, 4)
+print(result)
+# OUTPUT
+'''
+7
+'''
+# explaination
+'''
+ when arguments for fun1 is passed, it returns fun2(a,b)
+ when we pass the argument (add, 3, 4) in place of parameters (fun2, a, b),
+ we replace can consider a=3, b= 4 and fun2 = add ( ie we are assigning add t fun2)
+ since the fun1 returns fun2(a,b) and we know add(x,y) is defined, value of a, b = x, y
+ so fun2(a,b) = add(x,y) = add(3,4) which returns x + y, ie 3+4 ie 7 (HENCE THE OUTPUT)
+'''
+# Advantages
+'''
+- behaviour of a function can be customized by providing different functions as arguments.
+'''
+
+def convert_to_upper(s):
+    return s.upper()
+def convert_to_lower(s):
+    return s.lower()
+def greet(fun):
+    return fun('Nice to meet you! ')
+
+print(greet(convert_to_upper))
+print(greet(convert_to_lower))
+#OUTPUT
+'''
+NICE TO MEET YOU!
+nice to meet you!
+'''
+
+
+# Storing functions in a LIST
+def square(num):
+    return num ** 2
+def cube(num):
+    return num ** 3
+functions_list = [square, cube]
+
+number_square = functions_list[0](10)    # the [square bracket] is used to REFER TO THE INDEX, followed by BRACES in which ARGUMENT of the function is Passed
+number_cube = functions_list[1](12) 
+
+print(f"Square: {number_square}")
+print(f"Cube: {number_cube}")
+# Advantages
+'''
+Easy to switch between different operations based on users choice
+'''
+def add(x, y):
+    return x + y
+def subtract(x, y):
+    return x - y
+functions_list = [add, subtract]
+
+print('1. find sum\n2. find difference')
+choice = int(input('choose the option no. '))
+
+selected_operation = functions_list[choice - 1]
+print(selected_operation(20, 10))
+#OUTPUT
+'''
+1. find sum
+2. find difference
+choose the option no. 2
+10
 '''
