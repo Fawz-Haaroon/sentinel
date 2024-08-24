@@ -242,10 +242,1937 @@ on operands in an expression
  >| ** | Right to Left |
  >| +x and -x | Left to Right |
  >| *, /, //, %  | Left to Right |
- >| + and - | Left to Right |
+ >| + and - | Left to Right |\
+ 
+## working with multiple variables
+
+    fruits = ["apple", "banana", "cherry"]
+    x, y, z = fruits
+
+    print(x)
+    print(z)
+    print(y)
+
+OUTPUT
+
+    apple
+    cherry
+    banana
+    
+  
+## difference between using global and function specific local variable
+> when a variable with same name as global variable is defined inside a function differently, then when the function is called this local variable is taken as its value
+
+    x = "awesome"
+
+    def myfunc():
+      x = "fantastic"
+      print("Python is " + x)
+
+    myfunc()
+
+    print("Python is " + x)
+
+    '''
+    OUTPUT
+    Python is fantastic
+    Python is awesome
+    '''
+
+> a global variable can be changed inside a function by using "global" keyword and assigning new value , it will be applied once the function is called 
+
+> else the object will hold on to the original value. Once the funtion is called, the previous value of the variable wont be considered anymore
+
+    x = 'fantastic'
+    def myfunc():
+      global x
+      x = 'mouse'   
+      print("Python is " + x)
+  
+    print("Python is " + x)  
+    myfunc()
+    print("Python is " + x)
+OUTPUT
+
+    Python is fantastic
+    Python is mouse
+    Python is mouse
 
 
-## Difference between **for loop** and **while loop**
+# Strings in python
+
+    name = 'Arifureta'
+    print(name[0])
+OUTPUT
+    
+    'A'
+
+
+## STRINGS- Accessing substring of a string (slicing)
+
+    name = 'Haaroon'
+    print(name[0:7])
+    print(name[0:])
+    print(name[:7])
+    print(name[:])
+    print(name[-7:])
+OUTPUT
+
+    Haaroon
+    Haaroon
+    Haaroon
+    Haaroon
+    Haaroon
+
+
+
+## STRING-OPERATORS:- Concatenate Operator  
+
+    a = 'aaaa'
+    b = 'bbbb'
+    c = 'cccc'
+    z = a + b + c 
+    print(z)
+OUTPUT
+
+    aaaabbbbcccc
+
+
+## STRING-OPERATORS:- Repitition Operator
+
+    x = 'Fawz'
+    print(x * 3)
+    print(x * 0)
+    print(x * -2)
+OUTPUT
+
+    FawzFawzFawz
+
+
+## STRING-OPERATORS:- Comparison Operator
+
+**Comparisons are case sensitive, each character has an ASCII value  while using these operators, only the ASCII values are compared**
+>ASCII value of A=65, B=66, C=67 ......\
+ASCII value of a=97, b=98, c=99 ......\
+so A < a\
+
+1] == \
+2] != \
+3] <\
+4] <=\
+5] >\
+6] >=
+
+
+## STRING-OPERATORS:- Membership Operator
+>
+1] in\
+(eg)
+
+
+    'jas' in 'jaspreet'
+output
+
+    True
+2] not in\
+(eg)
+
+    'p' not in 'jaspreet'
+output
+
+    True
+
+## STRING-OPERATORS:- Escape Sequence Operator
+> some escape characters include \n,\b,\t,\\,\ooo,\xhh,\
+> \a,\f,\r,\v
+
+    print("I am Jaspreet and \nI am \x66rom \Indi\141\".")
+OUTPUT
+
+    I am Jaspreet and 
+    I am from \India".
+
+
+# STRING-OPERATORS:- Formatting Operator (format specifiers)
+
+**String formatting operator (%) is used to format a string
+%d, %c, %s, %f are some commonly used string formatters**
+ 
+
+    age = 28
+    print('My age is %d' %(age))
+OUTPUT
+
+    My age is 28
+
+
+
+## String slicing with the THIRD parameter
+
+    user = 'I am jaspreet'
+    print(user[0:8:2])
+OUTPUT
+
+    'Ia a'
+
+(eg)
+
+    s = 'abc' * 3
+    print(s)
+    print(s[::3])   
+    print(s[1::3])
+    print(s[:5:3])
+OUTPUT
+
+    abcabcabc
+    aaa
+    bbb
+    aa
+
+
+## Negative THIRD parameter
+
+    s = 'I am Jaspreet'
+    print(s[8:1:-2])
+OUTPUT
+
+    pa a
+
+
+# reversing a string
+
+    print(s[::-1])
+OUTPUT
+
+    teerpsaJ ma I
+
+
+# String Interpolation or String formatting
+
+**the process of inserting an object into a predefined string is called string interpolation or string formatting**
+
+## multiple variable interpolation
+
+    name = 'fawz'
+    city = 'chennai'
+    print("My name is %s and I live in %s." % (name,city))
+OUTPUT
+
+    My name is fawz and I live in chennai.
+
+
+## str.format() function
+
+    name = 'Fawz'
+    city = 'Chennai'
+    print("My name is {} and I live in {}".format(name,city))
+OUTPUT
+
+    My name is Fawz and I live in Chennai
+
+
+# Referencing variables though indexing
+
+    name = 'Fawz'
+    city = 'chennai'
+    print("My name is {0} and I live in {1}".format(name, city))
+OUTPUT
+
+    My name is Fawz and I live in chennai
+
+
+## using keywords to refer for improving readability
+(1)
+
+    n = 'Fawz'
+    c = 'Chennai'
+    print("My name is {name} and I live in {city}".format(name=n,city=c))
+OUTPUT
+
+    My name is Fawz and I live in Chennai
+
+(2)
+
+    print("I got {0:f}% marks {2:f}% marks and {1:f}% in each term on English.".format(55.66,75.7768978989,56.99))
+OUTPUT
+
+    I got 55.660000% marks in English.
+
+(3)
+
+    print("I GOT {0:.5f} in english , {1:.7f} in maths".format(94.566,98.45656767867867878))
+OUTPUT
+
+    I GOT 94.56600 in english , 98.4565677 in maths
+
+
+# fstrings
+
+    name = 'Fawz'
+    city = 'chennai'
+    print(f"My name is {name} and I am {city}")
+    print(F"My name is {name} and I am {city}")
+OUTPUT
+
+    My name is Fawz and I am chennai
+    My name is Fawz and I am chennai
+
+
+**CALLING METHODS OF STRING IS ALSO POSSIBLE**\
+(Eg)
+
+    name = "FAWZ"
+    city = "Delhi"
+    print(f'My name is {name.upper()} and I live in {city.upper()}')
+OUTPUT
+
+    My name is FAWZ and I live in DELHI
+
+
+# for better readability multiline f-strings can be used
+
+    name = 'FAWZ'
+    age = 34
+    gender = 'male'
+
+
+## 1st way - using backslash
+
+    intro1 = f"my name is {name}." \
+                 f"my age is {age}." \
+                 f"my gender is {gender}."
+## 2nd way - using brackets
+    intro2 =( f"my name is {name}."
+                 f"my age is {age}."
+                 f"my gender is {gender}.")
+## 3rd way - using triple quotes 
+>(everything including newlines and spaces are preserved in the format when this method is used)
+    
+    intro3 = f'''my name is {name}
+    my age is {age}
+    my gender is {gender}'''
+
+printing output
+
+    print(intro1)
+    print(intro2)
+    print(intro3)
+OUTPUT
+
+    my name is FAWZ.my age is 34.my gender is male.
+    my name is FAWZ.my age is 34.my gender is male.
+    my name is FAWZ
+    my age is 34
+    my gender is male
+
+
+# IMPLICIT TYPE CONVERSION
+
+>Ability of Python to convert an OBJECT from ONE Datatype to another without any intervention from the programmer
+
+### **RULE OF CONVERSION :**
+**LOWER Datatype is converted to the HIGHER Data type
+The type of resultant depends upon the OPERATOR and 
+VALUE WITH HIGHER DATA TYPE**
+
+    print(5 + 10.98)
+OUTPUT
+
+    15.98
+
+
+**integer value 5 is converted to float while giving result in order to be added with a float datatype(higher datatype)**
+
+    print(10/2)
+OUTPUT
+
+    2.00
+
+
+> division by its very nature always results in a floating type value
+'''
+
+
+# EXPLICIT TYPE CONVERSION
+
+>refers to the conversion of OBJECT of ONE TYPE to ANOTHER TYPE
+via Programmer's intervention
+'''
+
+## **converting to int(value, base)**
+
+    x = '110'
+    x = int(x,2)   
+
+    # base 2 means, python treats it as binary balue and not decimal
+
+    print(type(x))
+    print(x + 1)
+
+OUTPUT
+
+    <class 'int'>
+    7
+
+
+## **converting to float(value)**
+(1)
+
+    x = 78
+    x = float(x)
+    print(x)
+OUTPUT
+    78.0
+
+(2)
+
+    y = '78.54654580'
+    y = float(y)
+    print(y)
+OUTPUT
+
+    78.5465458
+
+
+## **converting to str(value)**
+
+    a = 198
+    a = str(a)
+    print(type(a))
+OUTPUT
+
+    <class 'str'>
+
+# **STRING METHODS**
+
+
+## strip() method
+
+>HELPS IN REMOVING LEADING AND TRAILING CHARCACTERS WHICH WE MENTION TO DO SO\
+(removes white spaces by default if nothing is mentioned)
+
+> IT WILL NOT REMOVE MIDDLE CHARACTERS, ONLY CHECKS FOR THE CHARACTER AND REMOVES IT IF IT APPEARS IN THE BEGINNING OR END
+
+
+    print('   I am Fawz    '.strip())
+    print('$$$ $$I am Fawz$$$$'.strip('$'))
+OUTPUT
+
+    I am Fawz
+    $I am Fawz
+.
+
+    print('Hello world'.strip('ldoH'))
+
+  > IN THIS CASE , STRIP METHOD CHECKS FOR THE OCCURANCE OF THE CHARACTERS MENTIONED.. STARTING FROM THE BEGINNING, AND STOPS WHEN A NON-MENTIONED CHARACTER OCCURS. AND THEN IT STARTS CHECKING FROM THE END FOR THE MENTIONED CHARACTERS AND STOPS IN WHEN A NON-MENTIONED CHARACTER OCCURS. IT WONT AFFECT THE OCCURENCE OF MENTIONED CHARACTER IF THEY APPEAR IN THE MIDDLE
+
+OUTPUT
+
+    ello wor
+
+
+## lstrip() method
+
+> ONLY CHECKS FOR LEADING CHARACTERS AND DOESNT AFFECT TRAILING ONES
+
+## rstrip() method
+
+> ONLY CHECKS FOR TRAILING CHARACTERS AND DOESNT AFFECT LEADING ONES\
+.
+
+# split() method
+
+>used to split string into a list (from left to right)
+
+**SYNTAX\
+str.split ( separator, maxsplit )**
+
+**separator** - represents the character where split should occur\
+**maxsplit** - represents the no. of splits. for 'n' splits we get 'n+1' items\
+
+ **split() starts reading and separating the string from the left**
+
+    print("Hello!$I$am$Jaspreet".split('$',maxsplit=2))
+output
+
+    ['Hello','I','am$Jaspreet']
+
+
+## rsplit() method
+
+> used to split string into a list (from right to left)
+
+**SYNTAX\
+str.rsplit ( separator, maxsplit )**
+
+**split() starts reading and separating the string from right**
+
+    print("Hello!$I$am$Jaspreet".rsplit('$',maxsplit=2))
+output
+
+    ['Hello!$I','am','Jaspreet']
+
+
+# join() method
+
+> Used to JOIN the ELEMENTS of an 
+ITERABLE (list, dictionary, tuple, set,string,)
+
+**SYNTAX\
+separator.join ( iterable )**
+
+    li = ['H','E','L','L','O']
+    print(''.join(li)) 
+
+here **''** is the **separator**, ie nothing, not even white space, and list **li** is used since its an iterable, and hence can be joined
+
+OUTPUT
+    
+    HELLO
+
+'
+'
+
+    d = {'name': 'ADAM' , 'country': 'US'}
+    print(' and '.join(d)) 
+
+here **' and '** is the **separator** and dictionary **d** is used since its an iterable, and hence can be joined
+
+OUTPUT
+
+    name and country
+
+
+
+# replace() method
+
+>used to replace a specific string with another string.
+
+**SYNTAX\
+str.replace ( oldString, newString, count )**
+
+    s = 'I LOVE TO EAT MANGO and MANGO and MANGO'
+    print(s.replace('MANGO','APPLE'))
+    print(s.replace(' ','_',4))
+OUTPUT
+
+    I LOVE TO EAT APPLE and APPLE and APPLE
+    I_LOVE_TO_EAT_MANGO and MANGO and MANGO
+
+
+
+
+
+# upper() method
+
+>used to convert all letters of the string to UPPERCASE
+
+**SYNTAX\
+string.upper()**
+
+# lower() method
+
+>used to convert all letters of the string to LOWERCASE
+
+**SYNTAX\
+string.lower()**
+
+
+# capitalize() method
+
+>returns a string where the first character of the first word is UPPERCASE, and rest remaind the same
+
+**SYNTAX\
+string.lower()**
+
+
+# isupper() method
+
+>returns 'True' if ALL characters are uppercase, otherwise
+returns 'False'. so result is boolean value.
+
+**SYNTAX\
+string.isupper()**
+
+
+# islower() method
+
+>returns 'True' if ALL characters are lowercase, otherwise returns 'False'. so result is boolean value.
+
+**SYNTAX
+string.islower()**
+
+# isalpha() method
+
+> returns 'True' if ALL characters(it checks even for white spaces) are ALPHABETS (a-z or A-Z)
+
+**SYNTAX\
+string.isalpha()**
+
+    print("hello2".isalpha())
+    print("Hello I am Fawz".isalpha())
+    print("hshejgrhjsbhjs".isalpha())
+Output
+
+    False
+    False
+    True
+
+
+# isnumeric() method
+
+> returns 'True' if ALL characters(it checks even for white spaces or symbols like +,.,-, etc) are NUMBERS
+
+**SYNTAX\
+string.isnumeric()**
+
+    print("3453453".isnumeric())
+    print("3453.4434".isnumeric())
+    print("2/4".isnumeric())
+Output
+
+    True
+    False
+    False
+
+
+# isalnum() method
+
+> returns 'True' if all characters are alphanumeric\
+ (a-z , A-Z, 0-9)
+and no other characters
+
+    print("353hjb".isalnum())
+    print(" my age is 9".isalnum())
+Output
+
+    True
+    False
+
+
+# count() method
+
+> returns the No. of occurences of a substring\
+  if substring NOT FOUND, returns 0
+
+**SYNTAX\
+string.count(substring, start index, end index)**
+
+so it searches from start index till end index, the no. of occurences
+
+    print("i love fruits, Fruits are healthy".count('fruits'))
+    print("i love fruits, Fruits are healthy".count('fruits', 3, 13))
+Output
+
+    1
+    1
+
+# find() method
+
+>returns the INDEX of the FIRST occurence of the substring
+if substring NOT FOUND, returns -1
+
+**SYNTAX\
+string.find(substring, start index, end index)**
+
+    print("Python is a beautiful language".find('b'))
+    print("Python is a beautiful language".find('b', 1, 5))
+Output
+
+    12
+    -1
+
+
+# rfind() method
+
+>returns the INDEX of the LAST occurence of the substring
+if substring NOT FOUND, returns -1
+
+**SYNTAX\
+string.rfind(substring, start index, end index)**
+
+    print("Python is a beautiful language".rfind('e'))
+    print("Python is a beautiful language".rfind('e', 1, 5))
+Output
+
+    29
+    -1
+
+
+# index() method
+
+> returns the INDEX of the FIRST occurence of the substring
+if substring is NOT FOUND , it raises an EXCEPTION(valueError)
+
+**SYNTAX\
+string.index(substring, start index, end index)**
+
+    print("Python is a beautiful language".index('e'))
+    print("Python is a beautiful language".index('e',1,5))
+Output
+
+    13
+    ValueError: substring not found
+
+
+# rindex() method
+
+>returns the INDEX of the LAST occurence of the substring
+if substring is NOT FOUND , it raises an EXCEPTION(valueError)
+
+**SYNTAX\
+string.rindex(substring, start index, end index)**
+
+    print("Python is a beautiful language".rindex('e'))
+    print("Python is a beautiful language".rindex('e',1,5))
+Output
+
+    29
+    ValueError: substring not found
+
+
+# **LISTS**
+## **LISTS (single and multi dimentional)**
+
+    li = [ 1,2,3,4]
+    print(li[3])
+Output
+
+    4
+.
+
+    Li = [[1,2,3], 'srdrf' ,[4,3,5,5,4,3]]
+    print(Li[2][3])
+    print(Li[1][3])
+Output
+
+    5
+    r
+
+
+# **Adding elements to a list**
+
+# append() method
+
+> used to add items at the END of the list
+
+    list = ['c', 'cpp', 'java']
+    list.append('python')
+    list.append('java')
+    list.append('javascript')
+    list.append(['html','css'])
+    print(list)
+OUTPUT
+
+    ['c', 'cpp', 'java', 'python', 'java', 'javascript', ['html', 'css']]
+
+
+# insert() method
+
+> used to add an item at specific position
+
+**SYNTAX\
+list.insert ( position, value )**
+
+    List = ['html','css','javascript']
+    List.insert(1,'python')
+    print(List)
+OUTPUT
+
+    ['html', 'python', 'css', 'javascript']
+
+
+# extend() method
+> used to extend another list into a particular list
+
+
+    list1 = ['C', 'php', 'java', 'python']
+    list2 = ['html','css','javascript']
+    list1.extend(list2)
+    print(list1)
+    print(list2)
+OUTPUT
+
+    ['C', 'php', 'java', 'python', 'html', 'css', 'javascript']
+    ['html', 'css', 'javascript']
+
+
+# input a list using loop
+
+    n = int(input('Enter the no. of items: '))
+    items = []
+    for i in range(n):
+    x = int(input())
+    items.append(x)
+    print(items)
+# Output
+
+    Enter the no. of items: 4
+    4
+    67
+    75  
+    8
+    [4, 67, 75, 8]
+
+
+# **Creating a list using split() method**
+
+    numbers = input('enter the numbers: ').split()
+    print(numbers)
+    #output (notics the output is recieved as string)
+
+    enter the numbers: 43 34 33
+    ['43', '34', '33']
+
+
+# Accepting a list using both
+# split() and for loop
+
+    n = int(input('Enter the no. of items: '))
+    numbers = input('enter your ' + str(n) + ' numbers :' ).split()
+
+    print(numbers)
+
+    for i in range(0, n):
+    numbers[i] = int(numbers[i])
+    print(numbers)
+    
+    print(numbers)
+OUTPUT
+
+    Enter the no. of items: 4
+    enter your 4 numbers :33 99 77 66
+    ['33', '99', '77', '66']
+    [33, '99', '77', '66']  
+    [33, 99, '77', '66']
+    [33, 99, 77, '66']
+    [33, 99, 77, 66]    
+    [33, 99, 77, 66]
+
+
+# changing or altering MULTIPLE ITEMS of a list
+
+    list = [ 34,345,'josh','java',455,'llm']
+    list[2:4] = ['review','python', 4543]
+    print(list)
+OUTPUT
+
+    [34, 345, 'review', 'python', 4543, 455, 'llm']
+
+
+
+# inserting NEW item in a list
+
+**SYNTAX\
+list.insert ( index, item )**
+
+    list = ['java','python',45,54,'C']
+    list.insert(2,'mike')
+    print(list)
+OUTPUT
+
+    list = ['java','python','mike',45,54,'C']
+
+
+
+# **REMOVING item from list**
+
+## **using remove() method -- (pass the string)**
+
+    list = ['mike', 'java', 'kjhg']
+    list.remove('java')
+    print(list)
+OUTPUT
+
+    ['mike', 'kjhg']
+
+
+## using pop() method --- (pass the index) list.pop(index) also returns the deleted item    
+
+    list = ['mike', 'java', 'snake']
+    print(list.pop(1))
+    print(list)
+
+> IF NO INDEX IS SPECIFIED IN 
+li.pop(index)\
+ INDEX , THEN THE LAST ITEM IS REMOVED
+
+OUTPUT
+
+    java
+    ['mike', 'snake']
+
+
+## **Using del keyword**
+
+    li = ['mike', 'snake', 433, 543]
+    del li[1]
+    print(li)
+OUTPUT
+
+    ['mike', 433, 543]
+
+# we can also delete ENTIRE list using del keyword
+    
+    del li
+    print(li)
+OUTPUT
+
+    NameError: name 'li' is not defined
+
+
+# using clear method --- used to remove items of the list, and make an empty list
+
+    list = ['mike', 'java', 'kjhg']
+    list.clear()
+    print(list)
+OUTPUT
+
+    []
+
+
+# Using LIST COMPREHENSION to shorten a for loop
+
+## (eg1) using a usual for loop
+
+    names = ['James', 'Joseph', 'Samuel', 'Jaguar', 'Ryan']
+    J_names = []
+    for name in names:
+       if 'J' in name:
+          J_names.append(name)
+          print(J_names)
+    print(J_names)
+OUTPUT
+
+    ['James']
+    ['James', 'Joseph']
+    ['James', 'Joseph', 'Jaguar']
+    ['James', 'Joseph', 'Jaguar']
+
+# using LIST COMPREHESION
+
+    names = ['James', 'Joseph', 'Samuel', 'Jaguar', 'Ryan']
+    J_names = [name for name in names if 'J' in name]
+    print(J_names)
+OUTPUT
+
+    ['James', 'Joseph', 'Jaguar']
+
+## (eg2) using a usual for loop
+
+    animals = ['lion', 'tiger', 'whale', 'elephant', 'frog']
+    new_animals = []
+    for animal in animals:
+       new_animals.append(animal.title())
+       print(new_animals)
+    print(new_animals)
+OUTPUT
+
+    ['Lion']
+    ['Lion', 'Tiger']
+    ['Lion', 'Tiger', 'Whale']  
+    ['Lion', 'Tiger', 'Whale', 'Elephant']
+    ['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+    ['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+
+# using LIST COMPREHENSION
+
+    animals = ['lion', 'tiger', 'whale', 'elephant', 'frog']
+    new_animals = [animal.title() for animal in animals ]
+    print(new_animals)
+OUTPUT
+
+    ['Lion', 'Tiger', 'Whale', 'Elephant', 'Frog']
+
+
+# **DICTIONARIES**
+
+
+## MUTATION (changing values) in dictionary
+
+    dictionary = {'car': 'Audi', 'model': 'V7'}
+    dictionary['model'] = 'V8'
+    print(dict)
+OUTPUT
+
+    {'car': 'Audi', 'model': 'V8'}
+
+
+>SAME KEY SHOULD NOT BE USED, IF USED THEN THE VALUE OF THE LATTER'S VALUE WILL BE UPDATED TO THE KEY
+
+# LENGTH of dictionary
+
+    dictionary = {'brand':'Audi' , 'model': 'V7'}
+    print(len(dictionary))
+OUTPUT
+
+    2
+
+## **ALTERNATIVE WAY to construct dictionary using  dict() CONSTRUCTOR**
+
+    car = dict(brand = 'Audi', model = 'V8')
+    print(car)
+OUTPUT
+
+    {'brand': 'Audi', 'model': 'V8'}
+
+
+
+# **ACCESSING DICTIONARY ITEMS**
+
+## accessing VALUES using KEY NAMES
+
+    cars = {'brand':'Audi' , 'model': 'V7'}
+    print(car['brand'])
+output
+
+    Audi
+
+# accessing VALUES using get() method
+    cars = {'brand':'Audi' , 'model': 'V7'}
+    print(cars.get('brand'))
+output
+
+    Audi
+
+
+## accessing KEYS using keys() METHOD
+    cars = {'brand':'Audi' , 'model': 'V7'}
+    print(cars.keys())
+    cars['fuel'] = 'petrol'
+    print(cars.keys())
+Output
+
+> #[RETURNS A 'VIEW-OBJECT' (e.g) dict_keys([]) Containing 'KEYS' as a LIST]
+
+> #view-object also REFLECTS ANY CHANGES done to the dictionary
+
+
+    dict_keys(['brand', 'model'])
+    dict_keys(['brand', 'model', 'fuel'])
+
+
+# accessing VALUES using values() method
+
+    cars = {'brand':'Audi' , 'model': 'V7'}
+    print(cars.values())
+    cars['fuel'] = 'petrol'
+    print(cars.values())
+Output
+> #[RETURNS A 'VIEW-OBJECT' (e.g) dict_values([]) Containing 'values' as a LIST]
+
+> #view-object also REFLECTS ANY CHANGES done to the dictionary
+
+    dict_values(['Audi', 'V7'])
+    dict_items([('brand', 'Audi'), ('model', 'V7'), ('fuel', 'petrol')])
+
+
+# accessing values using items() method
+
+    cars = {'brand':'Audi' , 'model': 'V7'}
+    print(cars.items())
+    cars['fuel'] = 'petrol'
+    print(cars.items())
+Output
+
+> #RETURNS A 'VIEW-OBJECT' (e.g) dict_itemsontaining KEY-VALUE pair
+
+> #view-object also REFLECTS ANY CHANGES done to the dictionary
+
+    dict_items([('brand', 'Audi'), ('model', 'V7')])
+    dict_items([('brand', 'Audi'), ('model', 'V7'), ('fuel', 'petrol')])
+
+
+# **CHANGING and ADDING dictionary items**
+
+## Changing VALUES usimg KEYNAMES
+
+    car = {'brand':'audi', 'model':'q7'}
+    car['model'] = 'f6'
+    print(car)
+Output 
+
+    {'brand':'audi', 'model':'f6'}
+
+
+## Changing VALUES using update() method
+
+**SYNTAX\
+dict_name.update ( key-newvalue )**
+
+    car = {'brand':'audi', 'model':'q7'}
+    car.update({'model':'s5'})
+    print(car)
+Output
+
+    {'brand': 'audi', 'model': 's5'}
+
+
+## ADDING NEW ITEMS using KEY NAMES
+
+    car = {'brand':'audi', 'model':'q7'}
+    car['color'] = 'black'
+    print(car)
+Output
+
+    {'brand': 'audi', 'model': 'q7', 'color': 'black'}
+
+
+## ADDING NEW ITEMS using update() method
+
+    car = {'brand':'audi', 'model':'q7'}
+    car.update({'color':'black'})
+    print(car)
+Output
+
+    {'brand': 'audi', 'model': 'q7', 'color': 'black'}
+
+
+# **REMOVING items of a dictionary**
+
+## REMOVING an ITEM using pop() method
+**SYNTAX
+dict_name.pop ( key )**
+
+    car = {'brand':'audi', 'model':'q7'}
+    print(car.pop('model'))
+    print(car)
+OUTPUT
+> ( pop() RETURNS THE DELETED VALUE )
+
+    q7
+    {'brand': 'audi'}
+
+
+## REMOVING an ITEM using popitem() method
+
+> removes the last inserted item
+
+> returns the deleted item as tuple
+
+**SYNTAX\
+dict_name.popitem()**
+
+    car = {'brand':'audi', 'model':'q7'}
+    print(car.popitem())
+    print(car)
+output
+
+    ('model', 'q7')
+    {'brand': 'audi'}
+
+
+## REMOVING an ITEM using del keyword
+
+    car = {'brand':'audi', 'model':'q7'}
+    del car['model']
+    print(car)
+Output
+
+    {'brand': 'audi'}
+
+
+## REMOVING A DICTIONARY using del keyword
+
+    car = {'brand':'audi', 'model':'q7'}
+    del car
+    print(car)
+Output
+
+    NameError: name 'car' is not defined
+
+
+## EMPTY (not delete) using clear() method
+
+**SYNTAX\
+dict_name.clear()**
+
+    car = {'brand':'audi', 'model':'q7'}
+    car.clear()
+    print(car)
+Output
+
+    {}
+
+
+# **COPYING A DICTIONARY**
+
+## Copying using copy() method
+**SYNTAX
+dict2 = dict1.copy()**
+
+    car = {'brand':'audi', 'model':'q7'}
+    car_copy = car.copy()
+    print(car_copy)
+    print(car)
+    car_copy['model'] = 'f5'
+    print(car_copy)
+    print(car)
+Output
+
+    --- # a copy is made ---
+    {'brand': 'audi', 'model': 'q7'}
+    {'brand': 'audi', 'model': 'q7'}
+
+    --- # changes to the copy didnt affect the original dict ---
+    e original dict ---
+    
+    {'brand': 'audi', 'model': 'f5'}
+    {'brand': 'audi', 'model': 'q7'}
+
+
+## copying using dict() method
+**SYNTAX\
+dict2 = dict(dict1)**
+
+    car = {'brand':'audi', 'model':'q7'}
+    car_copy = dict(car)
+    print(car)
+    print(car_copy)
+    car_copy['model'] = 'h9'
+    print(car_copy)
+    print(car)
+Output
+
+    --- # a copy is made ---
+    {'brand': 'audi', 'model': 'q7'}
+    {'brand': 'audi', 'model': 'q7'}
+
+    --- # changes to the copy didnt affect the original dict ---
+
+    {'brand': 'audi', 'model': 'h9'}
+    {'brand': 'audi', 'model': 'q7'}
+
+
+# **TUPLES**
+
+**SYNTAX\
+tuple_name = ( item1,item2, item3)**
+
+> Tuples are IMMUTABLE ( no changes can be made to the items of tuple)
+
+> Tuple items are ordered with index and the order cannot be changed
+
+> Tuples can have DUPLICATES
+
+> Tuple is only recognised by a COMMA, even if it has only 1 ITEM
+
+
+# LENGTH of a tuple
+
+    car = ('AUDI', 'BENZ', 'BMW')
+    print(len(car))
+Output
+
+    3
+
+# TUPLE CONSTRUCTOR (alternative way to create tuple)
+
+    cars = tuple(('AUDI', 'BENZ', 'BMW'))      #needs two pairs of paranthesis
+    print(cars)
+Output
+
+    ('AUDI', 'BENZ', 'BMW')
+
+
+
+# ACCESSING TUPLE ITEMS
+
+## accessing Tuple items through POSITIVE INDEXING
+    cars = ('audi','benz','bmw')
+    print(cars[1])
+Output
+
+    benz
+
+
+## accessing Tuple items through NEGATIVE INDEXING
+    cars = ('audi','benz','bmw')
+    print(cars[-1])
+Output
+
+    bmw
+
+
+## accessing a RANGE of items using SLICING
+    cars = ('audi','benz','bmw')
+    print(cars[0:1])
+    print(cars[1:2])
+    print(cars[0:])
+    print(cars[:2])
+    print(cars[:])
+Output
+
+    ('audi',)
+    ('benz',)
+    ('audi', 'benz', 'bmw')
+    ('audi', 'benz')
+    ('audi', 'benz', 'bmw')
+
+
+## UPDATING/ ADDING items to a TUPLE
+
+> its NOT possible to add items DIRECTLY to a tuple as tuples are IMMUTABLE
+
+> we can Convert TUPLE --> LIST for this purpose
+
+
+# ADDDING ITEMS 
+
+    cars = ('Audi','BMW','Benz')
+    print(cars)
+    Lcars = list(cars)
+    Lcars.append('Toyota')
+    print(Lcars)
+    cars = tuple(Lcars)
+    print(cars)
+Output
+
+    ('Audi', 'BMW', 'Benz')
+    ['Audi', 'BMW', 'Benz', 'Toyota']
+    ('Audi', 'BMW', 'Benz', 'Toyota')
+
+
+# UPDATING ITEMS
+
+    cars = ('Audi','BMW','Benz')
+    print(cars)
+    Lcars = list(cars)
+    Lcars[1] = 'FERRARI'
+    print(Lcars)
+    cars = tuple(Lcars)
+    print(cars)
+Output
+
+    ('Audi', 'BMW', 'Benz')
+    ['Audi', 'FERRARI', 'Benz']
+    ('Audi', 'FERRARI', 'Benz')
+
+
+# REMOVING ITEMS
+## using  .remove()
+
+    cars = ('Audi','BMW','Benz')
+    print(cars)
+    Lcars = list(cars)
+    Lcars.remove('BMW')
+    print(Lcars)
+    cars = tuple(Lcars)
+    print(cars)
+Output
+
+    ('Audi', 'BMW', 'Benz')
+    ['Audi', 'Benz']
+    ('Audi', 'Benz')
+
+
+## using del keyword (TO REMOVE ENTIRE TUPLE)
+
+> (NO NEED TO CONVERT TO LIST CAN BE DONE DIRECTLY TO TUPLE)
+
+    cars = ('Audi','BMW','Benz')
+    del cars
+    print(cars)
+Output
+
+    NameError: name 'cars' is not defined
+
+
+# UNPACKING A TUPLE
+
+> Packing means Assigning values to a tuple
+
+> Unpackiing means Extracting values of a tuple
+  and assign them to variables
+
+    cars = ('Audi','Mercedes','BMW')
+    car1, car2, car3 = cars
+    print(car1)
+    print(car2)
+    print(car3)
+Output
+
+    Audi
+    Mercedes
+    BMW
+
+
+## Use of ASTERISK in unpacking a tuple
+
+> used when the numbers of variables are less than the
+  values of a tuple
+
+
+> **( when asterisk is USED IN THE LAST VARIABLE, the remaining items of the tuple are Assigned to the last variable,and RETURNED WITHIN [])**
+
+    cars = ('Audi','Mercedes','BMW','Ford','Lambo')
+    car1, car2, *car3 = cars
+    print(car1)
+    print(car2)
+    print(car3)
+Output
+
+    Audi
+    Mercedes
+    ['BMW', 'Ford', 'Lambo']
+
+
+> **( If asterisk is used with a variable other than the last variable, then the values are assigned until the VALUES LEFT Matches the VARIABLES LEFT)**    
+
+    cars = ('Audi','Mercedes','BMW','Ford','Lambo')
+    car1, *car2, car3 = cars
+    print(car1)
+    print(car2)
+    print(car3)
+Output
+
+    Audi
+    ['Mercedes', 'BMW', 'Ford']
+    Lambo
+
+
+# CONDITIONAL STATEMENTS
+**IF conditional statement\
+elif conditions\
+else conditions\
+NESTED if conditionals**
+
+# USUAL condition format
+
+    if condition1:
+        # executed when condition1 is True
+
+        if condition1A:
+            # executed when condition2 is True, only if condition1 is True
+        # statement outside nested if block (2nd statement of 1st if condition)
+
+    elif condition2:
+        # executed when condition1 is not satisfied, if satisied, the elif is skipped
+
+    else:
+        # executed in the case where none of the conditions are satisfied
+
+
+
+
+# shorthand if else format 
+**( used when 1 IF STATEMENT AND 1 ELSE STATEMENT\
+ alone is needed to be executed)** 
+
+> executed statement | if | condition | else | statement
+
+    age = 6
+    print('age is greater than 5') if age > 5 else print('age is less than 5')
+Output
+
+    age is greater than 5
+
+
+
+## (eg) with logical AND
+
+    age = 20
+    nationality = 'American'
+    if age > 18 and age <30 and nationality == 'Indian':
+        print('You are Eligible for exam and fee is ₹1500')
+    elif age > 18 and age <30 and nationality == 'American':
+        print('you are Eligible for the exam and fee is $50')
+    else:
+        print('not eigible')
+Output
+
+    you are Eligible for the exam and fee is $50
+
+
+# (eg) with logical OR
+    
+    today = 'tuesday'
+    if today == 'saturday' or today == 'sunday':
+        print('its a holiday')
+    elif today == 'monday' or today == 'tuesday':
+        print('work 2 hrs extra')
+    else:
+        print('normal work hours')
+Output
+
+    normal work hours
+
+# (eg) with logical NOT
+
+    a = False
+    if not a:
+        print('x is False')
+Output
+
+    a is False
+**(eg)**
+
+    name = 'John'
+    if not name:
+        print('No name.')
+    else:
+        print(f"Yourname is {name}.")
+Output 
+> ( if the string is empty, then the NOT operator returns True, else False)
+
+    Your name is John
+
+**(Eg3)**
+
+    names = ['John','Mike','Sarah']
+    if not names:
+        print('No names')
+    else:
+        print(f"There are a total of {len(names)} names.")
+Output
+
+    There are a total of 3 names.
+
+# **WHILE LOOP**
+# simple while loop
+
+    n = 1
+    while n <= 3:
+        print(n)
+        n += 1
+Output
+
+    x is False
+
+
+## sum of 'n' Nartural numbers using while loop
+
+    n = int(input('enter the value of n '))
+    sum = 0                 # initializing the variable
+    while n > 0:
+        sum += n
+        n -= 1
+    print(f'Sum is {sum}')
+Output
+
+enter the value of n 9
+Sum is 45
+
+
+# infinite while loop
+
+    n = 100
+    while True:
+        print(n)
+        n -= 1
+
+ 
+    while True:
+        line =input("Enter the line (type 'q' to quit): ")
+        if line == 'q':
+            break
+        print(line)
+Output
+
+    Enter the line (type 'q' to quit): 
+    hello
+    Enter the line (type 'q' to quit): q
+     
+
+
+
+# while loop with else
+
+> (lets consider a list of fruits that includes 4 types of fruits,
+
+WAP to determine whether if the fruit 'orange' is present or not)
+
+
+## 1st method
+    fruits = ['apple', 'banana', 'mango', 'strawberry']
+    fruits_len = len(fruits)
+    index = 0
+
+    fruit_found = False
+
+    while index < fruits_len:
+        if fruits[index] == 'orange':
+            fruit_found = True
+            print('orange is available.')
+            break
+        index += 1
+
+    if not fruit_found:          # if fruit_found remains False, not returns True, so executes statement
+        print('orange is not available')
+
+
+## 2nd method
+
+    fruits = ['apple', 'banana', 'mango', 'strawberry']
+    fruits_len = len(fruits)
+    index = 0
+    while index < fruits_len:
+        if fruits[index] == 'orange':
+            print('orange is available.')
+            break
+        index += 1
+    else:
+        print('orange is not available')
+
+
+
+# **FOR LOOP**
+# range() fuction
+
+
+    >>> SYNTAX:- range(start, stop, step)
+                         |      |     |
+                         ▼      |     ▼
+    starting position of the    |  specifies the increment value
+    sequence. Default value     |  Default value is 1
+    is 0.                       |
+                                ▼
+                 Stopping position of the sequence. 
+                 Never included in the result of 
+                 the range() function
+
+
+## POINTS TO REMEMBER
+
+> the range() function only works with INTEGER AREGUMENTS
+
+> all THREE ARGUMENTS can be POSITIVE or NEGATIVE
+
+> the step value CANNOT be 0
+
+
+    for i in range(5):
+                   print(i)
+    print('done')
+Output
+
+    0   
+    1   
+    2
+    3
+    4
+    done
+
+
+    for i in range(1,10,2):
+            print(i)
+    print('done')
+Output
+
+    1
+    3
+    5
+    7
+    9
+
+## Sum of first 'n' natural number using for loop
+
+    n = int(input('Enter the value of n : '))
+    sum = 0
+    for i in range(1, n+1):
+            sum += i
+    print(f'sum of first {n} natural numbers is {sum}. ')
+Output
+
+    Enter the value of n : 5
+    sum of first 5 natural numbers is 15.
+
+# REVERSING  a range of numbers
+
+## reversing a range of numbers using NEGATIVE STEP value
+    for i in range(5, 0, -1):
+            print(i)
+    print('done')
+Output
+
+    5   
+    4
+    3
+    2
+    1
+    done    
+
+## reversing a range of numbers using reversed() function
+
+    for i in reversed(range(1, 6, 1)):
+            print(i)
+    print('done')
+Output
+
+    5
+    4
+    3
+    2
+    1
+    done
+
+
+# ACCESSING CHARACTERS of a string using **for** loop
+
+    name = 'John'
+    for c in name:
+        print(c, end=' ')    #extra argument to print the characters in the same line
+Output
+
+    J o h n
+
+
+
+## ITERATING  a string in REVERSE order using for loop (SLICING can be used for reversing)
+    name = 'John'
+    for c in name[::-1]:# iteration for reversing
+        print(c, end=' ')
+Output
+
+    n h o J
+
+
+# ACCESSING WORDS pf a string using for loop ( split() function can be used to split a string into words)
+
+    sentence = 'Hello its a nice day to go out'
+    count = 0
+    for word in sentence.split():
+        count += 1
+    print(f'There are {count} words in the sentence.')
+Output
+
+There are 8 words in the sentence
+
+
+
+# **using for loop with LISTS**
+
+## ITERATING over a list using for loop
+
+    cars = ['Audi', 'BMW', 'Benz']
+    for car in cars:
+           print(car)
+Output
+
+    Audi
+    BMW
+    Benz
+
+
+## using for loop along with range() to iterate over a list
+
+    cars = ['Audi', 'BMW', 'Benz']
+    for i in range(len(cars)):
+           print(cars[i])
+Output
+
+    Audi
+    BMW
+    Benz
+
+
+## for loop in **LIST COMPREHENSION**
+
+    cars = ['Audi', 'BMW', 'Benz']
+    [print(car) for car in cars]
+Output
+
+    Audi
+    BMW
+    Benz
+
+
+
+# **for loop in DICTIONARY**
+
+## ITERATING over a dictionary using for loop 
+
+    course = {'name':'Python', 'instructor':'Jaspreet'}
+    for x in course:
+        print(x)
+Output
+
+    name
+    instructor
+
+
+
+## ACCESSING VALUES of a Dictionary using for loop
+> ( square bracket notation can be used )
+
+    course = {'name':'Python', 'instructor':'Jaspreet'}
+    for x in course:
+        print(course[x])
+Output
+
+    Python
+    Jaspreet
+
+> ( **values()** method can be used )
+
+    course = {'name':'Python', 'instructor':'Jaspreet'}
+    for y in course.values():        # ( values() provides the VALUE of EACH key of the dictionary in the form of a LIST )
+        print(y)
+Output
+
+Python
+Jaspreet
+
+
+## ACCESSING KEYS  of a Dictionary using for loop
+
+    course = {'name':'Python', 'instructor':'Jaspreet'}
+    for x in course.keys():         #(   keys() return the KEYS of the dictionary in the form of a LIST)
+           print(x)
+Output
+
+    name
+    instructor
+
+
+## ACCESSING KEYS and VALUES of a Dictionary usinf for loop
+
+    course = {'name':'Python', 'instructor':'Jaspreet'}
+    for x, y in course.items():
+           print(x, y)
+Output
+
+    name Python
+    instructor Jaspreet
+
+# for loop with else block
+
+> the else block will be executed only then the loop is NOT terminated **abruptly by the break keyword**
+
+(eg)
+
+    sequence = 'abcefg'
+    for var in sequence:
+           # statement inside for
+    else:
+           # statement inside else
+- - - 
+
+
+    fav_languages = ['Python', 'C', 'Java', 'Ruby']
+    for language in fav_languages:
+           if language == 'Java':
+                  print('I like Java')
+                  break
+    else:
+        print('I dont like Java')
+Output
+
+    I like Java
+
+
+# break and continue statements in for loop
+
+## break statement
+
+> used to terminate the running loop
+
+
+    numbers = list(range(0,100))
+    for number in numbers:
+        if number >50:
+            break
+        print(number, end=' ')
+Output
+
+    0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 
+
+
+    while True:
+        num = input('Enter the number(q for quit): ')
+        if num == 'q':
+            break
+        print(num)
+Output
+
+    number(q for quit): 9
+    9
+    Enter the number(q for quit): q
+
+    ----------------------------------------------------------------------
+
+## continue statement
+
+> used to skip the current iteration of the loop
+
+    for i in range(5):
+          if i == 2 or i == 4:
+                continue
+          print(i)
+Output
+
+    0
+    1
+    3
+----
+
+    n = 0
+    while n <= 10:
+          n += 1
+          if n % 2 != 0:
+                continue
+          print(n, end=' ')
+Output
+
+    2 4 6 8 10 
+
+
+# NESTED FOR LOOP
+
+    list1 = [1,2,3]
+    list2 = [4,5,6]
+    for i in list1:
+        for j in list2:
+              print(i,j)
+        print( )
+Output
+
+    1 4
+    1 5
+    1 6
+
+    2 4
+    2 5
+    2 6
+
+    3 4
+    3 5
+    3 6
+
+
+
+
+
+# NESTED WHILE LOOP
+
+    list1 = [1,2,3]
+    list2 = [4,5,6]
+    i = 0 
+    while i < len(list1):
+        j = 0                   # written inside while, so as to reinitialize j to 0 
+        while j < len(list2):
+            print(list1[i], list2[j])
+            j += 1
+        print( ) 
+        i += 1
+Output
+
+    1 4
+    1 5
+    1 6
+
+    2 4
+    2 5
+    2 6
+
+    3 4
+    3 5
+    3 6
+
+
+
+
+# Difference between **for loop** and **while loop**
  | **for loop** | **while loop** |
  | --- | --- |
  | for loop needs an **iterable object** to iterate | while loop executes based on some conditions |
@@ -325,3 +2252,390 @@ on operands in an expression
     .
     .
     .(REPEATED)
+
+
+
+# **FUNCTIONS IN PYTHON**
+
+- **(Reusability)**  block of reusable code to perform specific task
+- **(Modularity)**  helps in breaking down a program into smaller and manageable pieces, easier to understand and maintain\
+
+**SYNTAX**
+
+    def function_name(parameters):
+        # code to be executed
+        # .....
+        return result
+
+
+# Function declaration
+
+    def square(number):
+        result = number ** 2
+        return result
+
+# Caling the Function to execute it
+    num = 5
+    result_square = square(num)
+
+# statement to print the output
+    print("The square of", num, "is", result_square)
+Output
+
+    The square of 5 is 25
+
+ 
+# DOCSTRING in a function
+>  a comment used inside a function to document it, 
+    it describes what a piece of code can do. 
+  - it is written within triple quotes.
+
+## Printing a docstring
+
+ use the ( __doc__ ) attribute \
+to access the Docstring of  a specific function
+
+    def greet(name):
+        """This function greet the person"""
+        print('HELLO,' + name + '!')
+    print(greet.__doc__)
+    
+Output
+
+    This function greet the person
+
+
+# CALL STACK
+
+- the Call Stack is used by the program to keep track of function calls ( it helps the program decide which function should be executed in which order)
+> the Call Stack is made up of STACK FRAMES, One for Each function call.
+
+
+    def foo(x,y):
+        x = x-y
+        return x
+    def caller():
+        x = 4
+        y = 10
+        print(x,y)
+        z = foo(x+1, y+3)
+        print(x,y,z)
+    caller()
+Output
+
+    The square of 5 is 25
+    This function greet the person
+
+
+# functions with **positional arguments**
+
+    def greet(name,age):
+        """This function greets the person and tells the age"""
+        print(f"Hello, {name}! You're {age} years old.")
+    greet('Alice', 30)
+Output
+
+    Hello, Alice! You're 30 years old.
+
+
+# function with **default arguments**
+
+    def greet(name, greeting = "Hello"):
+        print(greeting  + "," + name + "!")
+    greet("ALICE")
+    greet("bob", "HI")
+Output
+
+    Hello,ALICE!
+    HI,bob
+
+
+# funcions with keyword arguments
+
+    def greet(name, greeting, punctuation):
+        print(greeting + "," + name + punctuation)
+
+    # using keyword arguments to pass values to the function
+
+    greet(punctuation="!", greeting="HELLO", name="Neso")
+#Output
+
+    HELLO,Neso!
+
+
+
+# ORDER of Arguments
+
+- KEYWORD arguments comes only after positional arguments
+>
+
+    def simple_interest(P, R=1, T=1):
+        return (P * R * T) / 100
+    print(simple_interest(10, T=3))  #(simple_interest(T=3, 10) is wrong since keyword argument is coming before positional argument, so python throws an error)
+OUTPUT
+
+    0.3
+>
+    def generate_squares(limit):
+        squares = [i ** 2 for i in range(limit)]
+        return squares
+
+    limit= 5                   #this is declared outside the function and is different from the parameter variable, and hence is used as an argument
+    result = generate_squares(limit)
+    print(result)
+OUTPUT
+
+    [0, 1, 4, 9, 16]
+
+
+
+## returning multiple results is also possible
+
+    def math(a,b):
+        return a+b, a-b, a*b
+    sum , diff, product = math(4,5)
+    print(sum, diff, product)
+OUTPUT
+
+    9 -1 20
+
+
+
+## returning a tuple ( when only one variable is given to store multiple return results)
+
+    def math(a,b):
+        return a+b, a-b, a*b
+    result = math(4,5)
+    print(result)
+OUTPUT
+
+    (9, -1, 20)
+
+
+
+## returning a list 
+- ( the return value is enclosed in [square brackets]within which multiple return results are stored.this will be returned as list)
+>
+
+    def math(a,b):
+        return [a+b, a-b, a*b]
+    result = math(4,5)
+    print(result)
+OUTPUT
+
+    [9, -1, 20]
+
+
+
+# returning a dictionary
+    def math(a,b):
+        values = {'sum': a+b, 'diff': a-b, 'product': a*b}  # creating a dictionary
+        return values
+    result = math(4,5)
+    print(result)
+OUTPUT
+
+    {'sum': 9, 'diff': -1, 'product': 20}
+
+>
+
+
+    def rect_area(length,breadth):
+        if length<=0 or breadth<=0:
+            return None
+        else:
+            area = length * breadth
+            return area
+    length , breadth = 30, 10       #this is declared outside the function and is different from the parameter variable, and hence is used as an argument
+    area = rect_area(length, breadth)
+
+    if area is None:
+        print(" Invalid dimensions ")
+    else:
+        print(f"Area: {area}")
+OUTPUT
+
+    Area: 300
+
+
+.
+>
+
+    import math
+
+    def circle_area(radius):
+        area =  math.pi * radius**2
+        check = area > 100
+        return check
+    result = circle_area(6)
+    print(f'Is the circle area greater than 100?  {result}.')
+OUTPUT
+
+    Is the circle area greater than 100?  True.
+
+
+
+# FUNCTION ENCAPSULATION
+
+- The ability to HIDE IMPLEMENTATION DETAILS by Wrapping
+  an inner function within the outer function
+- Making the inner function inaccessaible outside the outer function
+
+
+# Closure in python
+
+- its A NESTED function, that allowws **Accessing** the variables from the outer function (from the enclosing scope)
+  even after the outer function completes its execution ( leaves the call stack )
+>
+
+    def outer_function(x):
+        def inner_function():
+            print(x)
+        return inner_function
+
+    inner = outer_function(10)      # when this is done, the definition of the called function is kept, and only the reference to inner_funcion iis returned, and this reference,,,,
+    inner()                         # reference to the inner_function is received by this variable, so when called this variable as method, we can use the inner_function
+#OUTPUT
+
+    10
+
+
+# uses of closures
+
+- Helps in creating resusable functions with different behaviours.
+>
+
+    def multiplier(factor):
+        def multiply(x):
+            return x* factor
+        return multiply
+    multiply_by_2 = multiplier(2)
+    multiply_by_3 = multiplier(3)
+
+    print(multiply_by_2(50))     # argument for the inner function is given when called through the variable
+    print(multiply_by_2(33))
+OUTPUT
+
+    100
+    99
+
+
+## Assigning FUNCTIONS to VARIABLES   
+- ( since everything in python is considered an OBJECT, even function can be assigned to a variable)
+>
+
+    # function definition
+    def greet(name):
+        return f"Hello, {name}!"
+
+    # Assigning te function to a variable
+    my_function = greet  # jus name of the function is mentioned, since we are not calling the function, we are just referencing(assigning) the function to the variable, so no need for '()'
+
+    # using the variable to call the function
+    result = my_function('Jaspreet')
+    print(result)
+
+OUTPUT
+
+    Hello, Jaspreet!
+
+
+## Advantages of assigning functions to variables
+
+- allows creating shorter or more descriptive names for functions
+- enables function SELECTION based on CONDITION or PREFERENCES
+>
+    def add(x, y):
+        return x+y
+    def multiply(x, y):
+        return x*y
+    choice = input('State Your operation, add or multiply ? ')
+    if choice == 'add':
+        selected_function = add
+    elif choice == 'multiply':
+        selected_function = multiply
+
+    result = selected_function(3, 5)
+    print(result)
+OUTPUT
+
+    State Your operation, add or multiply ? add
+    8
+
+
+## Passing functions as ARGUMENTS 
+
+    def add(x, y):
+        return x + y
+    def fun1(fun2, a, b):     # fun2 will recieve the reference to some function (whatever we assign) when we call the main function
+        return fun2(a, b)
+    result = fun1(add, 3, 4)
+    print(result)
+OUTPUT
+
+    7
+
+## explaination
+
+> when arguments for fun1 is passed, it returns fun2(a,b)\
+ when we pass the argument (add, 3, 4) in place of parameters (fun2, a, b),\
+ we can consider a=3, b= 4 and fun2 = add ( ie we are assigning add to fun2)\
+ since the fun1 returns fun2(a,b) and we know add(x,y) is defined,\
+  value of a, b = x, y\
+ so fun2(a,b) = add(x,y) = add(3,4) which returns x + y, ie 3+4 ie 7 (HENCE THE OUTPUT)
+
+## Advantages
+
+- behaviour of a function can be customized by providing different functions as arguments.
+>
+
+    def convert_to_upper(s):
+        return s.upper()
+    def convert_to_lower(s):
+        return s.lower()
+    def greet(fun):
+        return fun('Nice to meet you! ')
+
+    print(greet(convert_to_upper))
+    print(greet(convert_to_lower))
+OUTPUT
+
+    NICE TO MEET YOU!
+    nice to meet you!
+
+
+# Storing functions in a LIST
+
+    def square(num):
+        return num ** 2
+    def cube(num):
+        return num ** 3
+    functions_list = [square, cube]
+
+    number_square = functions_list[0](10)    # the [square bracket] is used to REFER TO THE INDEX, followed by BRACES in which ARGUMENT of the function is Passed
+    number_cube = functions_list[1](12) 
+
+    print(f"Square: {number_square}")
+    print(f"Cube: {number_cube}")
+
+
+- Easy to switch between different operations based on users choice
+>
+
+    def add(x, y):
+        return x + y
+    def subtract(x, y):
+        return x - y
+    functions_list = [add, subtract]
+
+    print('1. find sum\n2. find difference')
+    choice = int(input('choose the option no. '))
+
+    selected_operation = functions_list[choice - 1]
+    print(selected_operation(20, 10))
+OUTPUT
+
+    1. find sum
+    2. find difference
+    choose the option no. 2
+    10
