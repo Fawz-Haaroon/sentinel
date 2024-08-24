@@ -2639,3 +2639,130 @@ OUTPUT
     2. find difference
     choose the option no. 2
     10
+
+
+## PYTHON USES A MECHANISM CALLED CALL-BY-OBJECT-REFERENCE
+
+- if IMMUTABLE Objects are passed as Asguments, then the passing is like CALL BY VALUE\
+(actual values of the arguments are passed to the function)
+>
+
+    def modify_string(s):
+        s = s * 3
+        print(f'inside function: {s}')
+    name = 'Alice'
+    modify_string(name)
+    print(f'outside function: {name}')
+OUTPUT
+
+    inside function: AliceAliceAlice
+    outside function: ALice
+
+
+## if MUTABLE Objects are passed as Arguments, then the passing is like CALL BY REFERENCE (the memory addresses of the arguments are passed to the function)
+
+    def modify_list(l):
+        l.append(4)
+        print(f'inside function: {l}')
+    numbers = [1,2,3]
+    modify_list(numbers)
+    print(f'outside function: {numbers}')
+OUTPUT
+
+    inside function: [1,2,3,4]
+    outside function: [1,2 3 4]
+
+# **Built-in Functions in python**
+
+# max() and min() function
+
+- max() - returns the largest item in an     iterable or the largest of two     or more arguments\
+SYNTAX\
+  **max ( items, key=None, default=None )**
+>
+
+    max_value = max(1,2,3)
+    print(max_value)
+Output
+
+    3
+
+
+- min() - returns the snallest item in an     iterable or the smallest of two     or more arguments
+SYNTAX\
+ **min ( items, key=None, default=None )**
+>
+
+    numbers = [3,2,4,5,6,3,8,1]
+    min_values = min(numbers)
+    print(min_values)
+Output
+
+    1
+
+ -  **key argument can be privided to carry out a specific procedure its None by default**
+>
+
+    words = ['apple','mango','banana']
+    maxlength = max(words, key=len)
+    print(maxlength)
+OUTPUT
+
+    banana
+
+- **dafault argument can be provided to set a default value to be returned, in case of empty data**
+>
+
+    numbers = []
+    print(max(numbers, default= None))
+Output
+    
+    None
+
+
+# sorted() function
+
+- Used to Sort iterable object such as lists, tuples, and strings\
+
+SYNTAX\
+ **sorted(iterable, key=None, reverse= False)**\
+
+-> key argument can be used to provide a specific procedure to carry out\
+-> reverse argument is False by default, it means the sorting is done in asce ding order, if reverse argument if given False, then sorting happens in descending order.
+>
+
+    words = ['apple', 'kiwi', 'mango', 'banana']
+    sorted_length = sorted(words, key=len)
+    print(sorted_length)
+OUTPUT
+
+    ['kiwi', 'apple', 'mango', 'banana']
+
+
+# abs() function 
+
+- returns the ABSOLUTE Value of a number
+- absolute value of a no. is its Distance from 0 on the numberline
+>
+
+    num1 = -5
+    num2 = 6.87
+    abs1 = abs(num1)
+    abs2 = abs(num2)
+    print(abs1)
+    print(abs2)
+
+# abs() function with complex number
+- returns magnitude of complex no.
+- (eg) mag of a + bi = root(a²+b²)
+>
+
+    complex_num = 3 + 4j
+    abs_compnum = abs(complex_num)
+    print(abs_compnum)
+OUTPUT 
+
+    5.0
+
+
+
