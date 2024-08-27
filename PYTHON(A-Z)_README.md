@@ -2972,8 +2972,22 @@ OUTPUT
     List 2:  [2, 3, 4, 5, 6]
     Result:  [5, 13, 25, 41, 61]
 
-
-
-
-
-
+flvnjbhrvscekomnbkj vmc,p
+g'mv
+'b ok'or
+b'fn 
+nr b'ewnkpgj
+nb nk"R
+ kv
+ j'bfvj 
+ pgj'bgj
+ fc'b j
+ tvrcb' ijo'pkjobthp
+ gfcRon
+  bjfbcrh [
+    birjvpb nkjrb'vp jo
+    bivjo 'ip
+    objv
+    rvjb tjv
+    cr
+  ]
