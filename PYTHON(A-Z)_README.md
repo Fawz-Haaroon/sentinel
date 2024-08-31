@@ -3017,15 +3017,6 @@ nums = [0, 1, 2, 3, 4]
 
 
 
-Explanation:
-
-
-1. Check if the input array is empty.
-2. Initialize k to 1 (since the first element is always unique).
-3. Iterate through the array starting from the second element.
-4. If the current element differs from the previous one, place it at index k and increment k.
-5. Return k, representing the number of unique elements.
-
 
 This solution has:
 
