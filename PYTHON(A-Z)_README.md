@@ -3007,6 +3007,30 @@ print("k =", k)
 print("nums =", nums[:k])
 
 
+Here's a solution in Python:
+
+
+
+def removeDuplicates(nums):
+    if len(nums) == 0:
+        return 0
+
+    k = 1
+    for i in range(1, len(nums)):
+        if nums[i] != nums[i-1]:
+            nums[k] = nums[i]
+            k += 1
+
+    return k
+
+
+# Test the function
+nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+k = removeDuplicates(nums)
+print("k =", k)
+print("nums =", nums[:k])
+
+
 
 Output:
 
@@ -3017,6 +3041,15 @@ nums = [0, 1, 2, 3, 4]
 
 
 
+Explanation:
+
+
+1. Check if the input array is empty.
+2. Initialize k to 1 (since the first element is always unique).
+3. Iterate through the array starting from the second element.
+4. If the current element differs from the previous one, place it at index k and increment k.
+5. Return k, representing the number of unique elements.
+
 
 This solution has:
 
@@ -3026,3 +3059,73 @@ This solution has:
 
 
 as required. The function modifies the input array in-place without allocating extra space.
+
+
+Here's a simple implementation of a Tic Tac Toe game in Python:
+
+
+
+# Tic Tac Toe Game
+
+board = [' ' for _ in range(9)] # Initialize the game board
+
+
+def print_board():
+    """Print the current state of the board."""
+    row1 = '| {} | {} | {} |'.format(board[0], board[1], board[2])
+    row2 = '| {} | {} | {} |'.format(board[3], board[4], board[5])
+    row3 = '| {} | {} | {} |'.format(board[6], board[7], board[8])
+
+    print()
+    print(row1)
+    print(row2)
+    print(row3)
+    print()
+
+
+def check_win():
+    """Check for a win condition."""
+    win_conditions = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
+    for condition in win_conditions:
+        if board[condition[0]] == board[condition[1]] == board[condition[2]] != ' ':
+            return board[condition[0]]
+    if ' ' not in board:
+        return 'Tie'
+    return False
+
+
+def game():
+    """Run the Tic Tac Toe game."""
+    current_player = 'X'
+    while True:
+        print_board()
+        move = input("Player {}, enter your move (1-9): ".format(current_player))
+        if board[int(move) - 1] != ' ':
+            print("Invalid move, try again.")
+            continue
+        board[int(move) - 1] = current_player
+        result = check_win()
+        if result:
+            print_board()
+            if result == 'Tie':
+                print("It's a tie!")
+            else:
+                print("Player {} wins!".format(result))
+            break
+        current_player = 'O' if current_player == 'X' else 'X'
+
+
+game()
+
+
+
+How to Play:
+
+
+1. Run the code.
+2. Players take turns entering their moves (1-9).
+3. The game checks for wins or ties after each move.
+4. The game ends when a player wins or when all squares are filled (tie).
+
+
+Enjoy your game!
