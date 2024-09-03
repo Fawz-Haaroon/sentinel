@@ -3129,3 +3129,23 @@ How to Play:
 
 
 Enjoy your game!
+
+
+
+1. Run the code.
+2. Players take turns entering their moves (1-9).
+3. The game checks for wins or ties after each move.
+4. The game ends when a player wins or when all squares are filled (tie).
+
+
+Enjoy your game!
+
+
+
+1. Run the code.
+2. Players take turns entering their moves (1-9).
+3. The game checks for wins or ties after each move.
+4. The game ends when a player wins or when all squares are filled (tie).
+
+
+Enjoy your game!
