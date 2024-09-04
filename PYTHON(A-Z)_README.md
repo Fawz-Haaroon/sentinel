@@ -2792,12 +2792,12 @@ OUTPUT
     print(selected_operation(20, 10))
 ```
 OUTPUT
-
+```
     1. find sum
     2. find difference
     choose the option no. 2
     10
-
+```
 
 ## PYTHON USES A MECHANISM CALLED CALL-BY-OBJECT-REFERENCE
 
@@ -2934,7 +2934,7 @@ OUTPUT
 # map() function
 - Applies a **specified function** to all the items of an iterable
 - returns the map object containing the result\
-SYNTAX\
+- SYNTAX\
 **map( function, iterables )
 
 ```python
@@ -2967,185 +2967,91 @@ OUTPUT
     print(' Result: ', result_list)
 ```
 OUTPUT
-
+```
     List 1:  [1, 2, 3, 4, 5]
     List 2:  [2, 3, 4, 5, 6]
     Result:  [5, 13, 25, 41, 61]
+```
+
+
+# filter() function
+- used to filter the elements of an iterable based on the function argument
+- SYNTAX\
+ **filter(function, iterable)**
+- reurns the **filter object** containing elements for which the function argument evaluates to be True.
+```python
+    numbers = [1,2,3,4,5,6,7,8,9,10]    #iterable
+
+    def is_even(n):
+        return n % 2 == 0               #function which returns either True or False
+
+    filtered_numbers = filter(is_even, numbers)
+    result_list = list(filtered_numbers)
+
+    print("Original list:", numbers)
+    print("Filtered list:", result_list)
+
+```
+OUTPUT
+```
+    Original list: [1,2,3,4,5,6,7,8,9,10]
+    Filtered list: [2,4,6,8,10]
+```
+
+# filter() function with STRINGS
+
+```python
+    word = 'HELLO!'
+    
+    def is_vowel(char):
+        return char.lower() in {'a','e','i','o','u'}
+    
+    filtered_word = filter(is_vowel, word)
+    result_list = list(filtered_word)
+
+    print("Original word:", word)
+    print("Filtered vowels:", result_list)
+```
+OUTPUT
+```
+    Original word: HELLO!
+    Filtered vowels: ['E', 'O']
+```
+
+# zip() Function
+- used to combine **multiple iterables** into a ZIP OBJECT of TUPLES
+- if IIterables of of different length, then the iterable with **least items** decide the **Length of the Tuple**
+- SYNTAX\
+ **zip(iterable1, iterable2)**
+
+```python
+    list1 = [1,2,3]
+    list2 = ['a','b','c','d','e']
+
+    zipped_result = zip(list1,list2)
+    result_list = list(zipped_result)
+
+    print("Zipped Result:", resultant_list)
+```
+OUTPUT
+```
+    Zipped Result: [(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+# Iterating over multiple Lists, using zip() function within for statement
+
+```python
+    names = ['Alice', 'Bob', 'Charlie']
+    ages = [25, 30, 35]
+
+    # iterating over names and ages simultaneously
+    for name, age in zip(names , ages):
+        print(f"{name} is {age} years old.")
+```
+OUTPUT
+```
+    Alice is 25 years old.
+    Bob is 30 years old.
+    Charlie is 35 years old.
+```
 
-
-Q. Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
-Return k after placing the final result in the first k slots of nums.
-Do not allocate extra space for another array. You must do this by modifying the input array in- place with O(1) extra memory.
-Example 2:
-Input: nums = [0,0,1,1,1,2,2,3,3,4]
-Output: 5, nums = [0,1,2,3,4]
-Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
-It does not matter what you leave beyond the returned k (hence they are underscores)
-
-Here's a solution in Python:
-
-
-
-def removeDuplicates(nums):
-    if len(nums) == 0:
-        return 0
-
-    k = 1
-    for i in range(1, len(nums)):
-        if nums[i] != nums[i-1]:
-            nums[k] = nums[i]
-            k += 1
-
-    return k
-
-
-# Test the function
-nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-k = removeDuplicates(nums)
-print("k =", k)
-print("nums =", nums[:k])
-
-
-Here's a solution in Python:
-
-
-
-def removeDuplicates(nums):
-    if len(nums) == 0:
-        return 0
-
-    k = 1
-    for i in range(1, len(nums)):
-        if nums[i] != nums[i-1]:
-            nums[k] = nums[i]
-            k += 1
-
-    return k
-
-
-# Test the function
-nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-k = removeDuplicates(nums)
-print("k =", k)
-print("nums =", nums[:k])
-
-
-
-Output:
-
-
-
-k = 5
-nums = [0, 1, 2, 3, 4]
-
-
-
-Explanation:
-
-
-1. Check if the input array is empty.
-2. Initialize k to 1 (since the first element is always unique).
-3. Iterate through the array starting from the second element.
-4. If the current element differs from the previous one, place it at index k and increment k.
-5. Return k, representing the number of unique elements.
-
-
-This solution has:
-
-
-- Time complexity: O(n)
-- Space complexity: O(1)
-
-
-as required. The function modifies the input array in-place without allocating extra space.
-
-
-Here's a simple implementation of a Tic Tac Toe game in Python:
-
-
-
-# Tic Tac Toe Game
-
-board = [' ' for _ in range(9)] # Initialize the game board
-
-
-def print_board():
-    """Print the current state of the board."""
-    row1 = '| {} | {} | {} |'.format(board[0], board[1], board[2])
-    row2 = '| {} | {} | {} |'.format(board[3], board[4], board[5])
-    row3 = '| {} | {} | {} |'.format(board[6], board[7], board[8])
-
-    print()
-    print(row1)
-    print(row2)
-    print(row3)
-    print()
-
-
-def check_win():
-    """Check for a win condition."""
-    win_conditions = [(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)]
-    for condition in win_conditions:
-        if board[condition[0]] == board[condition[1]] == board[condition[2]] != ' ':
-            return board[condition[0]]
-    if ' ' not in board:
-        return 'Tie'
-    return False
-
-
-def game():
-    """Run the Tic Tac Toe game."""
-    current_player = 'X'
-    while True:
-        print_board()
-        move = input("Player {}, enter your move (1-9): ".format(current_player))
-        if board[int(move) - 1] != ' ':
-            print("Invalid move, try again.")
-            continue
-        board[int(move) - 1] = current_player
-        result = check_win()
-        if result:
-            print_board()
-            if result == 'Tie':
-                print("It's a tie!")
-            else:
-                print("Player {} wins!".format(result))
-            break
-        current_player = 'O' if current_player == 'X' else 'X'
-
-
-game()
-
-
-
-How to Play:
-
-
-1. Run the code.
-2. Players take turns entering their moves (1-9).
-3. The game checks for wins or ties after each move.
-4. The game ends when a player wins or when all squares are filled (tie).
-
-
-Enjoy your game!
-
-
-
-1. Run the code.
-2. Players take turns entering their moves (1-9).
-3. The game checks for wins or ties after each move.
-4. The game ends when a player wins or when all squares are filled (tie).
-
-
-Enjoy your game!
-
-
-
-1. Run the code.
-2. Players take turns entering their moves (1-9).
-3. The game checks for wins or ties after each move.
-4. The game ends when a player wins or when all squares are filled (tie).
-
-
-Enjoy your game!
