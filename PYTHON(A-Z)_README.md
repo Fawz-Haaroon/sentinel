@@ -12,7 +12,7 @@
 
 
 → So a single __logical line__ can consist of one or more __physical lines__.\
-→ we can add 2 __physical lines__ into 1 __logical line__ by using \ 
+→ we can make 1 __logical line__ into  2 __physical lines__ by using \ 
 
     a = 1\
     + 2
