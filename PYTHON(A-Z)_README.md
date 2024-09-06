@@ -275,10 +275,10 @@ print("Python is " + x)
 ```
     
 OUTPUT
-
+```
     Python is fantastic
     Python is awesome
-    
+```  
 
 > a global variable can be changed inside a function by using "global" keyword and assigning new value , it will be applied once the function is called 
 
@@ -295,11 +295,11 @@ OUTPUT
     print("Python is " + x)
 ```
 OUTPUT
-
+```
     Python is fantastic
     Python is mouse
     Python is mouse
-
+```
 
 # Strings in python
 ```python
@@ -307,9 +307,9 @@ OUTPUT
     print(name[0])
 ```
 OUTPUT
-    
+```   
     'A'
-
+```
 
 ## STRINGS- Accessing substring of a string (slicing)
 ```python
@@ -321,13 +321,13 @@ OUTPUT
     print(name[-7:])
 ```
 OUTPUT
-
+```
     Haaroon
     Haaroon
     Haaroon
     Haaroon
     Haaroon
-
+```
 
 
 ## STRING-OPERATORS:- Concatenate Operator  
@@ -339,9 +339,9 @@ OUTPUT
     print(z)
 ```
 OUTPUT
-
+```
     aaaabbbbcccc
-
+```
 
 ## STRING-OPERATORS:- Repitition Operator
 ```python
@@ -351,9 +351,9 @@ OUTPUT
     print(x * -2)
 ```    
 OUTPUT
-
+```
     FawzFawzFawz
-
+```
 
 ## STRING-OPERATORS:- Comparison Operator
 
@@ -387,9 +387,9 @@ output
     'p' not in 'jaspreet'
 ```
 output
-
+```
     True
-
+```
 ## STRING-OPERATORS:- Escape Sequence Operator
 > some escape characters include \n,\b,\t,\\,\ooo,\xhh,\
 > \a,\f,\r,\v
@@ -397,10 +397,10 @@ output
     print("I am Jaspreet and \nI am \x66rom \Indi\141\".")
 ```
 OUTPUT
-
+```
     I am Jaspreet and 
     I am from \India".
-
+```
 
 # STRING-OPERATORS:- Formatting Operator (format specifiers)
 
@@ -412,9 +412,9 @@ OUTPUT
     print('My age is %d' %(age))
 ```
 OUTPUT
-
+```
     My age is 28
-
+```
 
 
 ## String slicing with the THIRD parameter
@@ -423,9 +423,9 @@ OUTPUT
     print(user[0:8:2])
 ```
 OUTPUT
-
+```
     'Ia a'
-
+```
 (eg)
 ```python
     s = 'abc' * 3
@@ -514,9 +514,9 @@ OUTPUT
     print("I got {0:f}% marks {2:f}% marks and {1:f}% in each term on English.".format(55.66,75.7768978989,56.99))
 ```
 OUTPUT
-
+```
     I got 55.660000% marks in English.
-
+```
 (3)
 ```python
     print("I GOT {0:.5f} in english , {1:.7f} in maths".format(94.566,98.45656767867867878))
@@ -547,9 +547,9 @@ OUTPUT
     print(f'My name is {name.upper()} and I live in {city.upper()}')
 ```
 OUTPUT
-
+```
     My name is FAWZ and I live in DELHI
-
+```
 
 # for better readability multiline f-strings can be used
 ```python
