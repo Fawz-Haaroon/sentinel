@@ -3055,3 +3055,20 @@ OUTPUT
     Charlie is 35 years old.
 ```
 
+```C
+
+#include <stdio.h>
+int difference;
+void calculateDifference(int a, int b);
+int main() {
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    calculateDifference(a, b);
+    printf("Difference is %d\n", difference);
+    return 0;  
+}
+void calculateDifference(int x, int y) {
+    difference = x - y;
+}
+```
