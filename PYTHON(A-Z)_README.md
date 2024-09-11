@@ -3055,8 +3055,9 @@ OUTPUT
     Charlie is 35 years old.
 ```
 
-```C
+sorted_list = [1,1,1,2,2,3,4,4,5,6,6,6,7,7,8,8,9,9,9]remove_duplicates(sorted_listOUTPUT
 
+<<<<<<< HEAD
 #include <stdio.h>
 int difference;
 void calculateDifference(int a, int b);
@@ -3116,3 +3117,12 @@ int main() {
 void calculateDifference(int x, int y) {
     difference = x - y;
 }
+=======
+    List 1:  [1, 2, 3, 4, 5]
+    List 2:  [2, 3, 4, 5, 6]
+    Result:  [5, 13, 25, 41, 61]remove_duplicates(sorted_listremove_duplicates(sorted_listsorted_list = [1,1,1,2,2,3,4,4,5,6,6,6,7,7,8,8,9,9,9]OUTPUT
+
+    List 1:  [1, 2, 3, 4, 5]
+    List 2:  [2, 3, 4, 5, 6]
+    Result:  [5, 13, 25, 41, 61]
+>>>>>>> 9964a7f9c84147b379107cdd9a5efe51002e181c
