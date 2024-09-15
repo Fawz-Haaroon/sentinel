@@ -3054,3 +3054,31 @@ OUTPUT
     Bob is 30 years old.
     Charlie is 35 years old.
 ```
+
+```py
+    from transformers import T5ForConditionalGeneration, T5Tokenizer
+
+# Load pre-trained model and tokenizer
+model = T5ForConditionalGeneration.from_pretrained('t5-base')
+tokenizer = T5Tokenizer.from_pretrained('t5-base')
+
+def generate_response(user_input):
+    # Encode user input
+    input_ids = tokenizer.encode("generate response: " + user_input, return_tensors='pt')
+    
+    # Generate response
+    output = model.generate(input_ids, max_length=100)
+    
+    # Decode response
+    response = tokenizer.decode(output[0], skip_special_tokens=True)
+    
+    return response
+
+while True:
+    user_input = input("User: ")
+    if user_input.lower() == "quit":
+        break
+    response = generate_response(user_input)
+    print("Chatbot:", response)
+
+```
