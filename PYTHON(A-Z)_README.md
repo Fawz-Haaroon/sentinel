@@ -3182,18 +3182,3 @@ OUTPUT
     Charlie is 35 years old.
 ```
 
-```py
-    from transformers import T5ForConditionalGeneration, T5Tokenizer
-
-code(output[0], skip_special_tokens=True)
-    
-    return response
-
-while True:
-    user_input = input("User: ")
-    if user_input.lower() == "quit":
-        break
-    response = generate_response(user_input)
-    print("Chatbot:", response)
-
-```
