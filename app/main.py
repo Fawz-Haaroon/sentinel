@@ -8,5 +8,5 @@ app.include_router(health_router)
 
 
 @app.get("/")
-def root():
+def root() -> dict[str, str]:
     return {"status": "ok"}

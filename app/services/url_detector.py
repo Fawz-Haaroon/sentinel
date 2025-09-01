@@ -1,6 +1,6 @@
 import re
 from urllib.parse import urlsplit
-from typing import List, Tuple
+from typing import Callable, List, Tuple
 
 SHORTENERS = {
     "bit.ly",
@@ -55,7 +55,7 @@ WEIGHTS = {
 SAFE_PORTS = {80, 443, 8080, 8443}
 
 
-def _ratio(s: str, pred) -> float:
+def _ratio(s: str, pred: Callable[[str], bool]) -> float:
     if not s:
         return 0.0
     c = sum(1 for ch in s if pred(ch))
