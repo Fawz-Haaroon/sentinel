@@ -1,6 +1,6 @@
 [project]
 # Using pyproject just for tooling config; packaging can be added later.
-name = "cybersentinel"
+name = "sentinel"
 version = "0.1.0"
 requires-python = ">=3.10"
 
@@ -9,10 +9,13 @@ line-length = 100
 
 [tool.ruff]
 line-length = 100
-select = ["E","F","W","I","B","UP","C90","N","PL"]
-ignore = ["E501"]
 
-[tool.ruff.isort]
+[tool.ruff.lint]
+# Keep it minimal and non-opinionated for a generic skeleton.
+select = ["E", "F", "W"]
+ignore = []
+
+[tool.ruff.lint.isort]
 known-first-party = ["app"]
 
 [tool.mypy]
@@ -25,6 +28,7 @@ warn_unused_configs = true
 no_implicit_optional = true
 strict_optional = true
 ignore_missing_imports = true
+mypy_path = "."
 
 [tool.pytest.ini_options]
 addopts = "-q"

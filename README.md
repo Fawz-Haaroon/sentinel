@@ -1,11 +1,11 @@
-# CyberSentinel
+# Sentinel
 
-Lightweight multi-layered phishing & malware detection suite.
+Lightweight, extensible security toolkit skeleton.
 
 - URL/domain checks powered by regex/rules + scoring
 - Obfuscation detection (shorteners, redirects)
 - Static attachment checks (PDF/Office) – minimal, deterministic
-- FastAPI service + simple dashboard skeleton
+- Optional API service (FastAPI example) + simple dashboard skeleton
 - CI, tests, and contributor tooling ready
 
 Quickstart

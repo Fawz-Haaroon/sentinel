@@ -134,4 +134,3 @@ def score_url(url: str) -> Tuple[str, int, List[str]]:
 
     verdict = "safe" if score < 20 else ("suspicious" if score < 50 else "malicious")
     return verdict, score, reasons
-

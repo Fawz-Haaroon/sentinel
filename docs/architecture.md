@@ -1,8 +1,8 @@
 # Architecture (Overview)
 
-- API: FastAPI (`app/`)
+- API (optional): FastAPI example (`app/`)
 - Rules engine: deterministic URL scoring (`app/services/`)
 - Config: YAML (`configs/`)
 - CI: lint, type-check, tests (`.github/workflows/ci.yml`)
-- Container: Dockerfile + compose (`docker/`)
+- Container (optional): Dockerfile + compose (`docker/`)
 

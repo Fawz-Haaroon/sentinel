@@ -6,4 +6,3 @@ def test_scoring_runs():
     assert verdict in {"safe", "suspicious", "malicious"}
     assert isinstance(score, int)
     assert isinstance(reasons, list)
-

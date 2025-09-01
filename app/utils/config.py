@@ -27,4 +27,3 @@ def load_yaml(path: str | Path) -> Dict[str, Any]:
         return {}
     with p.open("r", encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
-
