@@ -1,0 +1,16 @@
+thresholds:
+  safe: 20
+  malicious: 50
+
+shorteners:
+  - bit.ly
+  - t.co
+  - tinyurl.com
+  - goo.gl
+  - ow.ly
+  - is.gd
+  - buff.ly
+  - rebrand.ly
+  - cutt.ly
+  - s.id
+

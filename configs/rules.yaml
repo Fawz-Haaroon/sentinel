@@ -1,0 +1,23 @@
+regex:
+  susp_kw: "(login|verify|secure|update|confirm|limited|suspend|wallet|invoice|payment|account|gift|free|bonus|urgent|unlock)"
+  brand_action: "(paypal|apple|amazon|microsoft|office365|outlook|facebook|instagram|netflix|dhl|fedex|bank|chase|boa|wellsfargo).*(login|verify|secure|update|confirm)"
+  base64ish: "(?<![A-Za-z0-9+/=])[A-Za-z0-9+/]{16,}={0,2}(?![A-Za-z0-9+/=])"
+weights:
+  shortener: 20
+  punycode: 30
+  ip_host: 35
+  userinfo: 25
+  unusual_port: 10
+  long_host: 10
+  long_path: 10
+  long_query: 10
+  many_subdomains: 15
+  digit_ratio: 15
+  hyphen_ratio: 10
+  percent_density: 15
+  base64ish: 15
+  susp_kw: 10
+  brand_action: 25
+  susp_ext: 10
+  download_ext: 20
+
