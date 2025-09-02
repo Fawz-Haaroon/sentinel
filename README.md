@@ -77,7 +77,7 @@ sentinel analyze https://example.com
 ## Server Mode
 #### Launch the web dashboard:
 ```
-#### sentinel serve
+sentinel serve
 ```
 
 ### 🛠 Development
