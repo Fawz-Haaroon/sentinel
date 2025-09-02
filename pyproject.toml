@@ -3,34 +3,21 @@
 name = "sentinel"
 version = "0.1.0"
 requires-python = ">=3.10"
+authors = [{name="Fawz-Haaroon", email="fawzhaaroon216@gmail.com"}, {name="luvbyte", email="lovemelong@protonmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+dependencies = [
+    "rich",
+    "click",
+    "fastapi",
+    "pydantic",
+    "requests",
+    "beautifulsoup4",
+    "uvicorn[standard]"
+]
 
-[tool.black]
-line-length = 100
+[tool.setuptools.packages.find]
+include = ["app*"]
 
-[tool.ruff]
-line-length = 100
-
-[tool.ruff.lint]
-# Keep it minimal and non-opinionated for a generic skeleton.
-select = ["E", "F", "W"]
-ignore = []
-
-[tool.ruff.lint.isort]
-known-first-party = ["app"]
-
-[tool.mypy]
-python_version = "3.10"
-plugins = []
-disallow_untyped_defs = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_unused_configs = true
-no_implicit_optional = true
-strict_optional = true
-ignore_missing_imports = true
-mypy_path = "."
-
-[tool.pytest.ini_options]
-addopts = "-q"
-pythonpath = ["."]
-
+[project.scripts]
+sentinel = "app.cli.commands:main"
