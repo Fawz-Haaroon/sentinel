@@ -1,0 +1,1 @@
+from .config import sentinel_config
